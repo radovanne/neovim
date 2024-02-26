@@ -1,41 +1,44 @@
 local M = {
-  "hrsh7th/nvim-cmp",
+  "hrsh7th/nvim-cmp", -- autocompletion plugin
   event = "InsertEnter",
   dependencies = {
     {
-      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lsp", -- source for LSP completions
       event = "InsertEnter",
     },
     {
-      "hrsh7th/cmp-emoji",
+      "hrsh7th/cmp-emoji", -- source for emoji completions
       event = "InsertEnter",
     },
     {
-      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-buffer", -- source for text in buffer
       event = "InsertEnter",
     },
     {
-      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-path", -- source for file system paths
       event = "InsertEnter",
     },
     {
-      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-cmdline", -- source for command line completions
       event = "InsertEnter",
     },
     {
-      "saadparwaiz1/cmp_luasnip",
+      "saadparwaiz1/cmp_luasnip", -- for autocompletion
       event = "InsertEnter",
     },
     {
-      "L3MON4D3/LuaSnip",
+      "L3MON4D3/LuaSnip", -- snippet engine
       event = "InsertEnter",
       dependencies = {
         "rafamadriz/friendly-snippets",
       },
     },
     {
-      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-nvim-lua", -- source for nvim lua completions
     },
+    --{
+    --  "onsails/lspkind.nvim",  -- vs-code like pictograms
+    --}
   },
 }
 
@@ -54,6 +57,7 @@ function M.config()
   end
 
   local icons = require "verde.icons"
+  -- local lspkind = require "lspkind"
 
   cmp.setup {
     snippet = {
@@ -110,15 +114,18 @@ function M.config()
     formatting = {
       expandable_indicator = true,
       fields = { "kind", "abbr", "menu" },
-      format = function(entry, vim_item)
+      -- format = lspkind.cmp_format({
+			--		maxwidth = 50,
+			--		ellipsis_char = "..."}),
+        format = function(entry, vim_item)
         vim_item.kind = icons.kind[vim_item.kind]
         vim_item.menu = ({
-          nvim_lsp = "",
-          nvim_lua = "",
-          luasnip = "",
-          buffer = "",
-          path = "",
-          emoji = "",
+         nvim_lsp = "",
+         nvim_lua = "",
+         luasnip = "",
+         buffer = "",
+         path = "",
+         emoji = "",
         })[entry.source.name]
 
         if entry.source.name == "emoji" then
@@ -132,7 +139,7 @@ function M.config()
         end
 
         return vim_item
-      end,
+        end,
     },
     sources = {
       { name = "copilot" },
