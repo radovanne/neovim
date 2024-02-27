@@ -10,7 +10,6 @@ function M.config()
   -- set keymaps
   local keymap = vim.keymap -- for conciseness
 
-  local mark = require("harpoon.mark")
   local ui = require("harpoon.ui")
 
   keymap.set("n", "<leader>ha", "<cmd>lua require('verde.harpoon').mark_file()<cr>")
@@ -31,7 +30,8 @@ function M.config()
 end
 
 function M.mark_file()
-    require("harpoon.mark").add_file()
+    local mark = require("harpoon.mark")
+    mark.add_file()
     vim.notify "󱡅  marked file"
 end
 
