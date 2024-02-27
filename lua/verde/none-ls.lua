@@ -19,7 +19,7 @@ function M.config()
 			formatting.black,
 			formatting.zprint.with({
 				filetypes = { "clojure", "edn" },
-				command = "zprint-1.2.7",
+				command = "zprintm",
 			}),
 			null_ls.builtins.completion.spell,
 		},
