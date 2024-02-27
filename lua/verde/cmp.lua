@@ -128,6 +128,11 @@ function M.config()
          emoji = "",
         })[entry.source.name]
 
+        if entry.source.name == "copilot" then
+          vim_item.kind = icons.misc.Copilot
+          vim_item.kind_hl_group = "CmpItemKindCopilot"
+        end
+
         if entry.source.name == "emoji" then
           vim_item.kind = icons.misc.Smiley
           vim_item.kind_hl_group = "CmpItemKindEmoji"
@@ -142,13 +147,13 @@ function M.config()
         end,
     },
     sources = {
-      { name = "copilot" },
       { name = "nvim_lsp" },
+      { name = "copilot" },
+      { name = "buffer" },
+      { name = "path" },
       { name = "luasnip" },
       { name = "cmp_tabnine" },
       { name = "nvim_lua" },
-      { name = "buffer" },
-      { name = "path" },
       { name = "calc" },
       { name = "emoji" },
     },
@@ -166,7 +171,7 @@ function M.config()
       },
     },
     experimental = {
-      ghost_text = true,
+      ghost_text = false,
     },
   }
 end

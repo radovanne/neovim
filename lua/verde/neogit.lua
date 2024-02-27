@@ -1,6 +1,7 @@
 local M = {
   "neogitorg/neogit",
   event = "VeryLazy",
+  dependencies = { "sindrets/diffview.nvim" },
 }
 
 function M.config()

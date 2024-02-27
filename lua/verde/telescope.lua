@@ -9,13 +9,14 @@ function M.config()
   require("telescope").load_extension("project")
   local wk = require "which-key"
   local builtin = require("telescope.builtin")
+  local telescope = require("telescope")
   wk.register {
     ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
     ["<leader>fb"] = { builtin.git_branches, "Checkout branch" },
     ["<leader>fc"] = { builtin.colorscheme, "Colorscheme" },
     ["<leader>ff"] = { builtin.find_files, "Find files" },
     ["<leader>gf"] = { builtin.git_files, "Find git files" },
-    ["<leader>pp"] = { "<cmd>lua require('telescope').extensions.project.project()<cr>", "Projects" },
+    ["<leader>pp"] = { "<cmd>lua require('telescope').extensions.project.project{ display_type='full' }<cr>", "Projects" },
     ["<leader>ps"] = { builtin.live_grep, "Find Text" },
     ["<leader>fh"] = { builtin.help_tags, "Help" },
     ["<leader>fl"] = { builtin.resume, "Last Search" },
@@ -25,7 +26,6 @@ function M.config()
 
   local icons = require "verde.icons"
   local actions = require "telescope.actions"
-
 
   require("telescope").setup {
     defaults = {
@@ -116,6 +116,7 @@ function M.config()
       lsp_references = {
         theme = "ivy",
         initial_mode = "normal",
+        enable_preview = true,
       },
 
       lsp_definitions = {
@@ -140,6 +141,7 @@ function M.config()
         override_file_sorter = true, -- override the file sorter
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
+     -- theme = "ivy"
     },
   }
 end
