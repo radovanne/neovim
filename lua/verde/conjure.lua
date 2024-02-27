@@ -1,6 +1,6 @@
 return {
   "Olical/conjure",
-  ft = { "clojure" }, -- etc
+  ft = { "clojure", "edn" }, -- etc
   event = "LspAttach",
   -- [Optional] cmp-conjure for cmp
   dependencies = {

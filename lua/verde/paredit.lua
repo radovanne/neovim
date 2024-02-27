@@ -1,6 +1,6 @@
 local M = {
   "julienvincent/nvim-paredit",
-  ft = { "clojure" },
+  ft = { "clojure", "edn" },
 }
 
 function M.config()

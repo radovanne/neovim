@@ -1,5 +1,11 @@
-return {
-	"tpope/vim-dispatch",
-	"clojure-vim/vim-jack-in",
-	"radenling/vim-dispatch-neovim",
+local M = {
+	{	"clojure-vim/vim-jack-in",
+		ft = { "clojure", "edn" },
+		dependencies = {
+			"tpope/vim-dispatch",
+			"radenling/vim-dispatch-neovim",
+		}
+	}
 }
+
+return M
