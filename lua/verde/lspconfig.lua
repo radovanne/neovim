@@ -68,6 +68,7 @@ function M.config()
 
   local servers = {
     "lua_ls",
+    'phpactor',
     "cssls",
     "html",
     "tsserver",

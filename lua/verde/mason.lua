@@ -15,7 +15,7 @@ function M.config()
 		"bashls",
 		"jsonls",
 		"clojure_lsp",
-		"intelephense",
+		"phpactor",
 		"rust_analyzer",
 		"gopls",
 	}
