@@ -1,0 +1,13 @@
+{:style [:respect-nl :justified :drop-fm],
+  :style-map {:drop-fm {:fn-map nil}},
+  :list {:wrap? true,
+    :option-fn (fn
+        ([] "TBCF")
+        ([opts n exprs]
+         (when-not (or (keyword? (first exprs))
+                    (symbol? (first exprs)))
+          {:list {:indent 1}})))},
+    :map {:comma? false}
+  :fn-map
+  {"let" :binding, "cond" :pair-fn, "case" :arg1-pair-body},
+    :width 500}
