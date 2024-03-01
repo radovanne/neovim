@@ -27,6 +27,8 @@ spec "verde.surround"
 spec "verde.jack-in"
 spec "verde.conjure"
 spec "verde.paredit"
+-- laravel specific plugins
+spec "verde.laravel"
 -- Less important plugins
 spec "verde.navbuddy"
 spec "verde.colorizer"

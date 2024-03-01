@@ -8,6 +8,7 @@ local M = {
 function M.config()
 	local servers = {
 		"lua_ls",
+		"emmet_ls",
 		"cssls",
 		"html",
 		"tsserver",
@@ -15,9 +16,10 @@ function M.config()
 		"bashls",
 		"jsonls",
 		"clojure_lsp",
-		"phpactor",
+		"intelephense",
 		"rust_analyzer",
 		"gopls",
+		"tailwindcss",
 	}
 
 	require("mason").setup({
