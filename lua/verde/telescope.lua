@@ -6,6 +6,23 @@ local M = {
 }
 
 function M.config()
+  local base_ignore_patterns = {
+    "nuts/*",
+    "node%_modules/*",
+    "external_data/*",
+    ".idea/*",
+    ".git/*",
+    "app/Domain/Smartloader/assets/libs/*",
+    "storage/*",
+    "_ide_helper.php",
+    ".phpstorm.meta.php",
+    "public/js/*",
+    "public/css/*",
+    "public/libs/*",
+    "public/vendor/*",
+    "public/assets/*",
+  }
+
   require("telescope").load_extension("project")
   local wk = require "which-key"
   local builtin = require("telescope.builtin")
@@ -29,6 +46,7 @@ function M.config()
 
   require("telescope").setup {
     defaults = {
+      file_ignore_patterns = base_ignore_patterns,
       prompt_prefix = icons.ui.Telescope .. " ",
       selection_caret = icons.ui.Forward .. " ",
       entry_prefix = "   ",

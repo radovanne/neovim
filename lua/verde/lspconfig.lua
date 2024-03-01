@@ -67,14 +67,16 @@ function M.config()
 	local icons = require("verde.icons")
 
 	local servers = {
-		"emmet_ls",
+		"html",
 		"lua_ls",
 		"intelephense",
 		"cssls",
-		"html",
+		-- "html",
 		"tsserver",
+		"emmet_ls",
 		"eslint",
 		"clojure_lsp",
+		-- "emmet_language_server",
 		"gopls",
 		"rust_analyzer",
 		"tsserver",
@@ -133,28 +135,6 @@ function M.config()
 		if server == "lua_ls" then
 			require("neodev").setup({})
 		end
-
-		-- if server == "intelephense" then
-		-- 	opts = {
-		-- 		cmd = { "intelephense", "--stdio" },
-		-- 		on_attach = M.on_attach,
-		-- 		capabilities = M.common_capabilities(),
-		-- 		servers = {
-		-- 			intelephense = {
-		-- 				filetypes = { "php", "blade" },
-		-- 				settings = {
-		-- 					intelephense = {
-		-- 						filetypes = { "php", "blade" },
-		-- 						files = {
-		-- 							associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
-		-- 							maxSize = 5000000,
-		-- 						},
-		-- 					},
-		-- 				},
-		-- 			},
-		-- 		},
-		-- 	}
-		-- end
 
 		lspconfig[server].setup(opts)
 	end

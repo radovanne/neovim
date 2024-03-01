@@ -43,8 +43,36 @@ local M = {
 }
 
 function M.config()
-  local cmp = require "cmp"
-  local luasnip = require "luasnip"
+  local cmp = require("cmp")
+  local luasnip = require("luasnip")
+  local fmt = require("luasnip.extras.fmt").fmt
+
+  -- custom snippet for html in php file
+  luasnip.add_snippets("php", {
+    luasnip.snippet(
+      "html5",
+      fmt(
+        [[
+      <!DOCTYPE html>
+      <html lang='en'>
+      <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>{1}</title>
+      </head>
+      <body>
+        {2} 
+      </body>
+      </html>
+      ]],
+        {
+          luasnip.insert_node(1, "Title"),
+          luasnip.insert_node(2, "Body")
+        }
+      )
+    ),
+  })
+
   require("luasnip/loaders/from_vscode").lazy_load()
 
   vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
@@ -52,20 +80,20 @@ function M.config()
   vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
   local check_backspace = function()
-    local col = vim.fn.col "." - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+    local col = vim.fn.col(".") - 1
+    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
   end
 
-  local icons = require "verde.icons"
+  local icons = require("verde.icons")
   -- local lspkind = require "lspkind"
 
-  cmp.setup {
+  cmp.setup({
     snippet = {
       expand = function(args)
-        luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      luasnip.lsp_expand(args.body) -- For `luasnip` users.
       end,
     },
-    mapping = cmp.mapping.preset.insert {
+    mapping = cmp.mapping.preset.insert({
       ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
       ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
       ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
@@ -73,13 +101,13 @@ function M.config()
       ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
       ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
       ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-      ["<C-e>"] = cmp.mapping {
+      ["<C-e>"] = cmp.mapping({
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
-      },
+      }),
       -- Accept currently selected item. If none selected, `select` first item.
       -- Set `select` to `false` to only confirm explicitly selected items.
-      ["<CR>"] = cmp.mapping.confirm { select = true },
+      ["<CR>"] = cmp.mapping.confirm({ select = true }),
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
@@ -94,9 +122,9 @@ function M.config()
           fallback()
           -- require("neotab").tabout()
         end
-      end, {
-        "i",
-        "s",
+        end, {
+          "i",
+          "s",
       }),
       ["<S-Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
@@ -106,26 +134,26 @@ function M.config()
         else
           fallback()
         end
-      end, {
-        "i",
-        "s",
+        end, {
+          "i",
+          "s",
       }),
-    },
+    }),
     formatting = {
       expandable_indicator = true,
       fields = { "kind", "abbr", "menu" },
       -- format = lspkind.cmp_format({
-			--		maxwidth = 50,
-			--		ellipsis_char = "..."}),
-        format = function(entry, vim_item)
+      --		maxwidth = 50,
+      --		ellipsis_char = "..."}),
+      format = function(entry, vim_item)
         vim_item.kind = icons.kind[vim_item.kind]
         vim_item.menu = ({
-         nvim_lsp = "",
-         nvim_lua = "",
-         luasnip = "",
-         buffer = "",
-         path = "",
-         emoji = "",
+          nvim_lsp = "",
+          nvim_lua = "",
+          luasnip = "",
+          buffer = "",
+          path = "",
+          emoji = "",
         })[entry.source.name]
 
         if entry.source.name == "copilot" then
@@ -144,7 +172,7 @@ function M.config()
         end
 
         return vim_item
-        end,
+      end,
     },
     sources = {
       { name = "nvim_lsp" },
@@ -173,7 +201,7 @@ function M.config()
     experimental = {
       ghost_text = false,
     },
-  }
+  })
 end
 
 return M

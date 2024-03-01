@@ -8,9 +8,11 @@ local M = {
 function M.config()
 	local servers = {
 		"lua_ls",
-		"emmet_ls",
+		-- "emmet_language_server",
 		"cssls",
-		"html",
+		"htmx",
+		-- "html",
+		"emmet_ls",
 		"tsserver",
 		"pyright",
 		"bashls",
