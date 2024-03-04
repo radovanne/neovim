@@ -78,7 +78,7 @@ function M.config()
 		"clojure_lsp",
 		-- "emmet_language_server",
 		"gopls",
-		"rust_analyzer",
+		-- "rust_analyzer",
 		"tsserver",
 		"pyright",
 		"bashls",
