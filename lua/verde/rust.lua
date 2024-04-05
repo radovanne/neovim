@@ -1,26 +1,33 @@
 local M = {
-		"mrcjkb/rustaceanvim",
-		version = "^4", -- Recommended
-		ft = { "rust" },
+	"mrcjkb/rustaceanvim",
+	version = "^4", -- Recommended
+	ft = { "rust" },
 }
 
 function M.config()
 	local lspconfig = require("verde.lspconfig")
+	local extension_path = vim.env.HOME .. "/.local/share/nvim/mason/packages/codelldb/extension/"
+	local codelldb_path = extension_path .. "adapter/codelldb"
+	local liblldb_path = extension_path .. "lldb/lib/liblldb"
+	local this_os = vim.loop.os_uname().sysname
+
+	liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")
+
 	vim.g.rustaceanvim = {
 		tools = {
-				runnables = {
-					use_telescope = true,
-				},
-				inlay_hints = {
-					auto = true,
-					show_parameter_hints = true,
-					parameter_hints_prefix = "",
-					other_hints_prefix = "",
-				},
-				hover_actions = {
-					auto_focus = false,
-				},
+			runnables = {
+				use_telescope = true,
 			},
+			inlay_hints = {
+				auto = true,
+				show_parameter_hints = true,
+				parameter_hints_prefix = "",
+				other_hints_prefix = "",
+			},
+			hover_actions = {
+				auto_focus = false,
+			},
+		},
 
 		server = {
 			on_attach = function(client, bufnr)
@@ -102,7 +109,7 @@ function M.config()
 			},
 		},
 		-- DAP configuration
-		-- dap = {},
+		dap = { adapter = require("rustaceanvim.config").get_codelldb_adapter(codelldb_path, liblldb_path) },
 	}
 end
 

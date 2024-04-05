@@ -23,6 +23,7 @@ local M = {
 			end,
 		},
 		{ "theHamsta/nvim-dap-virtual-text" },
+		{ "nvim-telescope/telescope-dap.nvim" }
 	},
 }
 
