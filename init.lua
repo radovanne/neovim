@@ -31,6 +31,7 @@ spec "verde.paredit"
 spec "verde.laravel"
 -- rust specific plugin
 spec "verde.rust"
+spec "verde.crates"
 -- debug specific plugin
 spec "verde.nvim-dap"
 -- Less important plugins
