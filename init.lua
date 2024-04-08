@@ -10,7 +10,7 @@ spec "verde.schemastore"
 spec "verde.lspconfig"
 spec "verde.cmp"
 spec "verde.lualine"
-spec "verde.copilot"
+-- spec "verde.copilot" -- skill issue
 spec "verde.harpoon"
 spec "verde.autopairs"
 spec "verde.illuminate"
