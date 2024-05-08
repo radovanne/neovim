@@ -1,4 +1,4 @@
-return {
+local M = {
   "Olical/conjure",
   ft = { "clojure", "edn" }, -- etc
   event = "LspAttach",
@@ -21,13 +21,15 @@ return {
       end,
     },
   },
-  config = function(_, opts)
-    require("conjure.main").main()
-    require("conjure.mapping")["on-filetype"]()
-    vim.g["conjure#mapping#doc_word"] = ",,gk"
-  end,
   init = function()
     -- Set configuration options here
     vim.g["conjure#debug"] = false
   end,
 }
+
+function M.config()
+    require("conjure.main").main()
+    require("conjure.mapping")["on-filetype"]()
+    vim.g["conjure#mapping#doc_word"] = ",,gk"
+end
+return M
