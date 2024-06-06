@@ -29,9 +29,11 @@ spec "verde.conjure"
 spec "verde.paredit"
 -- laravel specific plugins
 spec "verde.laravel"
--- rust specific plugin
+-- rust specific plugins
 spec "verde.rust"
 spec "verde.crates"
+-- go specific plugins
+spec "verde.go"
 -- debug specific plugin
 spec "verde.nvim-dap"
 -- Less important plugins
