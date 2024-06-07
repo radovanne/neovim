@@ -6,24 +6,26 @@ local M = {
 		"MunifTanjim/nui.nvim",
 		"nvimtools/none-ls.nvim",
 	},
+	ft = {"php"},
 	cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
 	event = { "VeryLazy" },
 }
 
 function M.config()
-	local wk = require("which-key")
 
-	wk.register({
-		l = {
-			name = "Laravel",
-			a = { ":Laravel artisan<cr>", "Toggle artisan." },
-			r = { ":Laravel routes<cr>", "Routes." },
-			m = { ":Laravel related<cr>", "Related." },
-		},
-	}, {
-		mode = "n",
-		prefix = "<localleader>",
-	})
+	--TODO: Make it so it uses localleader only while in PHP file????
+	-- local wk = require("which-key")
+	-- wk.register({
+	-- 	l = {
+	-- 		name = "Laravel",
+	-- 		a = { ":Laravel artisan<cr>", "Toggle artisan." },
+	-- 		r = { ":Laravel routes<cr>", "Routes." },
+	-- 		m = { ":Laravel related<cr>", "Related." },
+	-- 	},
+	-- }, {
+	-- 	mode = "n",
+	-- 	prefix = "<localleader>",
+	-- })
 
 	local laravel = require("laravel")
 	laravel.setup({
