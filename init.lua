@@ -11,7 +11,7 @@ spec "verde.lspconfig"
 spec "verde.cmp"
 spec "verde.lualine"
 -- spec "verde.copilot" -- skill issue
-spec "verde.harpoon"
+-- spec "verde.harpoon" -- TODO: fix!!
 spec "verde.autopairs"
 spec "verde.illuminate"
 spec "verde.whichkey"
