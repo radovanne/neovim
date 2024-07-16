@@ -26,19 +26,19 @@ function M.config()
   require("telescope").load_extension("project")
   local wk = require "which-key"
   local builtin = require("telescope.builtin")
-  local telescope = require("telescope")
-  wk.register {
-    ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    ["<leader>fb"] = { builtin.git_branches, "Checkout branch" },
-    ["<leader>fc"] = { builtin.colorscheme, "Colorscheme" },
-    ["<leader>ff"] = { builtin.find_files, "Find files" },
-    ["<leader>gf"] = { builtin.git_files, "Find git files" },
-    ["<leader>pp"] = { "<cmd>lua require('telescope').extensions.project.project{ display_type='full' }<cr>", "Projects" },
-    ["<leader>ps"] = { builtin.live_grep, "Find Text" },
-    ["<leader>fh"] = { builtin.help_tags, "Help" },
-    ["<leader>fl"] = { builtin.resume, "Last Search" },
-    ["<leader>fr"] = { builtin.oldfiles, "Recent File" },
-    ["<leader>ss"] = { builtin.current_buffer_fuzzy_find, "Fuzzily search in current buffer"}
+
+  wk.add {
+    {"<leader>bb", "<cmd>Telescope buffers previewer=false<cr>",desc = "Find" },
+    {"<leader>fb", builtin.git_branches,desc = "Checkout branch" },
+    {"<leader>fc", builtin.colorscheme,desc = "Colorscheme" },
+    {"<leader>ff", builtin.find_files,desc = "Find files" },
+    {"<leader>gf", builtin.git_files,desc = "Find git files" },
+    {"<leader>pp", "<cmd>lua require('telescope').extensions.project.project{ display_type='full' }<cr>",desc = "Projects" },
+    {"<leader>ps", builtin.live_grep, desc ="Find Text" },
+    {"<leader>fh", builtin.help_tags, desc ="Help" },
+    {"<leader>fl", builtin.resume,desc = "Last Search" },
+    {"<leader>fr", builtin.oldfiles,desc = "Recent File" },
+    {"<leader>ss", builtin.current_buffer_fuzzy_find, desc ="Fuzzily search in current buffer"}
   }
 
   local icons = require "verde.icons"

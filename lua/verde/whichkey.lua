@@ -1,29 +1,22 @@
 local M = {
   "folke/which-key.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
 }
 
 function M.config()
   local mappings = {
-    q = { "<cmd>confirm q<CR>", "Quit" },
-    H = { "<cmd>nohlsearch<CR>", "NOHL" },
-    [";"] = { "<cmd>tabnew | terminal<CR>", "Term" },
-    v = { "<cmd>vsplit<CR>", "Split" },
-    b = { name = "Buffers" },
-    d = { name = "Debug" },
-    f = { name = "Find" },
-    g = { name = "Git" },
-    l = { name = "LSP" },
-    p = { name = "Plugins" },
-    t = { name = "Test" },
-    a = {
-      name = "Tab",
-      n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
-      N = { "<cmd>tabnew %<cr>", "New Tab" },
-      o = { "<cmd>tabonly<cr>", "Only" },
-      h = { "<cmd>-tabmove<cr>", "Move Left" },
-      l = { "<cmd>+tabmove<cr>", "Move Right" },
-    },
-    T = { name = "Treesitter" },
+    { "<leader>q", "<cmd>confirm q<CR>", desc = "Quit", mode = "n"},
+    { "<leader>H", "<cmd>nohlsearch<CR>", desc = "NOHL", mode = "n" },
+    { "<leader>;", "<cmd>tabnew | terminal<CR>",desc = "Term", mode = "n" },
+    { "<leader>v", "<cmd>vsplit<CR>", desc =  "Split", mode = "n" },
+    {"<leader>b",  desc = "Buffers" },
+    {"<leader>b",  desc = "Debug" },
+    {"<leader>d",  desc = "Find" },
+    {"<leader>f",  desc = "Find" },
+    {"<leader>g",  desc = "Git" },
+    {"<leader>l",  desc = "LSP" },
+    {"<leader>p",  desc = "Plugins" },
+    {"<leader>t",  desc = "Test" },
   }
 
   local which_key = require "which-key"
@@ -45,12 +38,12 @@ function M.config()
         g = false,
       },
     },
-    window = {
-      border = "rounded",
-      position = "bottom",
-      padding = { 2, 2, 2, 2 },
-    },
-    ignore_missing = true,
+    -- window = {
+    --   border = "rounded",
+    --   position = "bottom",
+    --   padding = { 2, 2, 2, 2 },
+    -- },
+    -- ignore_missing = true,
     show_help = false,
     show_keys = false,
     disable = {
@@ -59,12 +52,7 @@ function M.config()
     },
   }
 
-  local opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "<leader>",
-  }
-
-  which_key.register(mappings, opts)
+  which_key.add(mappings)
 end
 
 return M

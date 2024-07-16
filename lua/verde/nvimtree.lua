@@ -5,8 +5,8 @@ local M = {
 
 function M.config()
   local wk = require "which-key"
-  wk.register {
-    ["<leader>pt"] = { "<cmd>NvimTreeToggle<CR>", "Project Tree" },
+  wk.add {
+    {"<leader>pt", "<cmd>NvimTreeToggle<CR>",desc = "Project Tree" },
   }
 
   local icons = require "verde.icons"
