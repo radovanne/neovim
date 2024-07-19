@@ -12,7 +12,7 @@ function M.config()
 			actions = true,
 			completion = true,
 		},
-		src = {
+		completion = {
 			cmp = { enabled = true },
 		},
 		null_ls = {
