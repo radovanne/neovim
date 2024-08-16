@@ -4,6 +4,7 @@ local M = {
 }
 
 function M.config()
+  ---@diagnostic disable: missing-fields
   require("bqf").setup {
     auto_enable = true,
     magic_window = true,

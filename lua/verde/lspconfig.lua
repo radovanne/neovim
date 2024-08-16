@@ -42,18 +42,19 @@ end
 function M.config()
 	local wk = require("which-key")
 	wk.add({
-		{"<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
-		{"<leader>cf",
+		{ "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
+		{
+			"<leader>cf",
 			"<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
 			desc = "Format",
 		},
-		{"<leader>li", "<cmd>LspInfo<cr>",desc = "Info" },
-		{"<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>",desc =  "Next Diagnostic" },
-		{"<leader>lh", "<cmd>lua require('verde.lspconfig').toggle_inlay_hints()<cr>",desc =  "Hints" },
-		{"<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>",desc =  "Prev Diagnostic" },
-		{"<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>",desc =  "CodeLens Action" },
-		{"<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>",desc =  "Quickfix" },
-		{"<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>",desc =  "Rename" },
+		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
+		{ "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next Diagnostic" },
+		{ "<leader>lh", "<cmd>lua require('verde.lspconfig').toggle_inlay_hints()<cr>", desc = "Hints" },
+		{ "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic" },
+		{ "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action" },
+		{ "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "Quickfix" },
+		{ "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
 	})
 
 	local lspconfig = require("lspconfig")
@@ -62,7 +63,6 @@ function M.config()
 	local servers = {
 		"html",
 		"lua_ls",
-		"intelephense",
 		"cssls",
 		"tsserver",
 		"emmet_ls",
@@ -109,7 +109,7 @@ function M.config()
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 	vim.lsp.handlers["textDocument/signatureHelp"] =
-		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+	vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 
 	for _, server in pairs(servers) do

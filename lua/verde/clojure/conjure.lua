@@ -31,5 +31,8 @@ function M.config()
     require("conjure.main").main()
     require("conjure.mapping")["on-filetype"]()
     vim.g["conjure#mapping#doc_word"] = ",,gk"
+    vim.g["conjure#log#treesitter"] = false
+    vim.g["conjure#client_on_load"] = false
+    vim.g["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false
 end
 return M
