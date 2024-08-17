@@ -39,7 +39,20 @@ function M.config()
 	local eval = require("conjure.eval")
 	local extract = require("conjure.extract")
 
-	local function eval_clay_form()
+	local function clay_start()
+		local source_path = vim.fn.expand("%:p")
+		local code = string.format(
+			'(do (require \'[scicloj.clay.v2.api :as clay]) (clay/make! {:source-path "%s"}))',
+			source_path
+		)
+
+		eval["eval-str"]({
+			origin = "custom-clay-wrapper",
+			code = code,
+		})
+	end
+
+	local function clay_eval_form()
 		local form_content = extract.form({ root = true }).content
 		local source_path = vim.fn.expand("%:p")
 		local code =
@@ -51,7 +64,7 @@ function M.config()
 		})
 	end
 
-	local function eval_clay_ns()
+	local function clay_eval_ns()
 		local source_path = vim.fn.expand("%:p")
 		local code = string.format('(scicloj.clay.v2.api/make! {:source-path "%s"})', source_path)
 		eval["eval-str"]({
@@ -60,7 +73,7 @@ function M.config()
 		})
 	end
 
-	local function eval_clay_hiccup_ns()
+	local function clay_eval_ns_to_hiccup()
 		local source_path = vim.fn.expand("%:p")
 		local code = string.format('(scicloj.clay.v2.api/make-hiccup {:source-path "%s"})', source_path)
 		eval["eval-str"]({
@@ -71,9 +84,11 @@ function M.config()
 
 	local wk = require("which-key")
 	wk.add({
-		{ "<localleader>ev", eval_clay_form, desc = "Clay eval form" },
-		{ "<localleader>env", eval_clay_ns, desc = "Clay eval ns" },
-		{ "<localleader>enh", eval_clay_hiccup_ns, desc = "Clay eval ns hiccup" },
+		{ "<localleader>c", group = "Connect/Clay" },
+		{ "<localleader>cs", clay_start, desc = "Clay start" },
+		{ "<localleader>cef", clay_eval_form, desc = "Clay eval form" },
+		{ "<localleader>cen", clay_eval_ns, desc = "Clay eval ns" },
+		{ "<localleader>ceh", clay_eval_ns_to_hiccup, desc = "Clay eval ns hiccup" },
 	})
 end
 return M
