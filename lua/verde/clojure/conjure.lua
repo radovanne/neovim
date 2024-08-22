@@ -9,31 +9,32 @@ local M = {
 			config = function()
 				local cmp = require("cmp")
 				local config = cmp.get_config()
-				table.insert(config.sources, {
-					name = "buffer",
-					option = {
-						sources = {
-							{ name = "conjure" },
-						},
-					},
-				})
-				cmp.setup(config)
+				config.sources = {
+					{ name = "conjure" },
+					{ name = "buffer" },
+					{ name = "path" },
+					{ name = "luasnip" },
+					{ name = "emoji" },
+					{ name = "calc" },
+				}
+				-- table.insert(config.sources, 1, { name = "conjure" })
+				return cmp.setup(config)
 			end,
 		},
 	},
 	init = function()
 		-- Set configuration options here
 		vim.g["conjure#debug"] = false
+		vim.g["conjure#mapping#doc_word"] = false
+		vim.g["conjure#log#treesitter"] = false
+		vim.g["conjure#client_on_load"] = false
+		vim.g["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false
 	end,
 }
 
 function M.config()
 	require("conjure.main").main()
 	require("conjure.mapping")["on-filetype"]()
-	vim.g["conjure#mapping#doc_word"] = ",,gk"
-	vim.g["conjure#log#treesitter"] = false
-	vim.g["conjure#client_on_load"] = false
-	vim.g["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false
 
 	-- SciCloj/Clay integration with Conjure written in Lua
 	local eval = require("conjure.eval")

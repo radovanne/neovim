@@ -75,8 +75,14 @@ function M.config()
 
   require("luasnip/loaders/from_vscode").lazy_load()
 
-  vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-  vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
+-- #3F0FB7
+-- #4B0082
+-- #3964C3
+-- #e71837
+
+  vim.api.nvim_set_hl(0, "CmpItemKindConjure", { fg = "#3964C3" })
+  vim.api.nvim_set_hl(0, "CmpItemKindBuffer", { fg = "#6CC644" })
+  vim.api.nvim_set_hl(0, "CmpItemKindNvimLsp", { fg = "#CA42F0" })
   vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
   local check_backspace = function()
@@ -156,9 +162,9 @@ function M.config()
           emoji = "",
         })[entry.source.name]
 
-        if entry.source.name == "copilot" then
-          vim_item.kind = icons.misc.Copilot
-          vim_item.kind_hl_group = "CmpItemKindCopilot"
+        if entry.source.name == "conjure" then
+          vim_item.kind = icons.ui.Code
+          vim_item.kind_hl_group = "CmpItemKindConjure"
         end
 
         if entry.source.name == "emoji" then
@@ -166,9 +172,14 @@ function M.config()
           vim_item.kind_hl_group = "CmpItemKindEmoji"
         end
 
-        if entry.source.name == "cmp_tabnine" then
+        if entry.source.name == "buffer" then
+          vim_item.kind = icons.ui.File
+          vim_item.kind_hl_group = "CmpItemKindBuffer"
+        end
+
+        if entry.source.name == "nvim_lsp" then
           vim_item.kind = icons.misc.Robot
-          vim_item.kind_hl_group = "CmpItemKindTabnine"
+          vim_item.kind_hl_group = "CmpItemKindNvimLsp"
         end
 
         return vim_item
@@ -176,11 +187,10 @@ function M.config()
     },
     sources = {
       { name = "nvim_lsp" },
-      { name = "copilot" },
+      -- { name = "copilot" },
       { name = "buffer" },
       { name = "path" },
       { name = "luasnip" },
-      { name = "cmp_tabnine" },
       { name = "nvim_lua" },
       { name = "calc" },
       { name = "emoji" },
