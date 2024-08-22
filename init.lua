@@ -33,7 +33,7 @@ spec("verde.comment")
 -- Clojure specific plugins
 spec("verde.clojure.jack-in")
 spec("verde.clojure.conjure")
-spec("verde.clojure.paredit")
+spec("verde.clojure.parpar")
 
 -- Rust specific plugins
 spec("verde.rust.rustaceanvim")

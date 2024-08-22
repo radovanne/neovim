@@ -12,6 +12,7 @@ local M = {
 				config.sources = {
 					{ name = "conjure" },
 					{ name = "buffer" },
+					{ name = "nvim_lsp" },
 					{ name = "path" },
 					{ name = "luasnip" },
 					{ name = "emoji" },
