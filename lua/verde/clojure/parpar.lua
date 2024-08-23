@@ -4,6 +4,7 @@ local M = {
 	dependencies = { "gpanders/nvim-parinfer", "julienvincent/nvim-paredit" },
 	config = function()
 		local paredit = require("nvim-paredit")
+		vim.g["parinfer_mode"] = "smart"
 		require("parpar").setup({
 			paredit = {
 				-- pass any nvim-paredit options here
