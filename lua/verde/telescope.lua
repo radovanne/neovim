@@ -1,5 +1,6 @@
 local M = {
 	"nvim-telescope/telescope.nvim",
+	tag = '0.1.8',
 	dependencies = {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
 		{ "nvim-telescope/telescope-project.nvim", lazy = true },
@@ -11,6 +12,7 @@ function M.config()
 		"nuts/*",
 		"node%_modules/*",
 		"external_data/*",
+		"classes/*",
 		"index_files/*",
 		".idea/*",
 		"app/Domain/Smartloader/assets/libs/*",

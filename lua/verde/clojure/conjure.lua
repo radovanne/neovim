@@ -18,7 +18,6 @@ local M = {
 					{ name = "emoji" },
 					{ name = "calc" },
 				}
-				-- table.insert(config.sources, 1, { name = "conjure" })
 				return cmp.setup(config)
 			end,
 		},
