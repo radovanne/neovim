@@ -9,11 +9,11 @@ spec("verde.git.gitsigns")
 spec("verde.git.gitlinker")
 
 -- Colorsheme specific plugins
-spec("verde.colorscheme.darkplus")
-spec("verde.colorscheme.catppuccin")
-spec("verde.colorscheme.github")
+-- spec("verde.colorscheme.darkplus")
+-- spec("verde.colorscheme.catppuccin")
+-- spec("verde.colorscheme.github")
 spec("verde.colorscheme.rose-pine")
-spec("verde.colorscheme.doom-one")
+-- spec("verde.colorscheme.doom-one")
 
 spec("verde.whichkey")
 spec("verde.devicons")
@@ -28,10 +28,11 @@ spec("verde.autopairs")
 spec("verde.matchup")
 spec("verde.illuminate")
 spec("verde.telescope")
-spec("verde.alpha")
+-- spec("verde.alpha") -- commented out because I am not using it.
 spec("verde.sleuth")
 spec("verde.surround")
 spec("verde.comment")
+spec("verde.undotree")
 
 -- Clojure specific plugins
 spec("verde.clojure.jack-in")
@@ -50,10 +51,9 @@ spec("verde.nvim-dap")
 
 -- Less important plugins
 spec("verde.colorizer")
-spec("verde.undotree")
-spec("verde.bqf") -- TEST if I need this
+-- spec("verde.bqf") -- commented out, TODO check how to use this 
 spec("verde.nvimtree")
-spec("verde.toggleterm")
+-- spec("verde.toggleterm") -- commented out because I am not using it.
 spec("verde.oil")
 spec("verde.fidget")
 require("verde.lazy")

@@ -75,10 +75,10 @@ function M.config()
 
   require("luasnip/loaders/from_vscode").lazy_load()
 
--- #3F0FB7
--- #4B0082
--- #3964C3
--- #e71837
+ -- #3F0FB7
+ -- #4B0082
+ -- #3964C3
+ -- #e71837
 
   vim.api.nvim_set_hl(0, "CmpItemKindConjure", { fg = "#3964C3" })
   vim.api.nvim_set_hl(0, "CmpItemKindBuffer", { fg = "#6CC644" })

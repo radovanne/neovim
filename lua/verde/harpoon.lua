@@ -5,9 +5,6 @@ local M = {
 }
 
 function M.config()
-	-- set keymaps
-	local keymap = vim.keymap -- for conciseness
-	local wk = require("which-key")
 
 	local harpoon = require("harpoon")
 	harpoon:setup()
@@ -32,29 +29,7 @@ function M.config()
 			:find()
 	end
 
-	-- keymap.set("n", "<leader>hE", function()
-	-- 	toggle_telescope(harpoon:list())
-	-- end, { desc = "Open harpoon window" })
-
-	-- keymap.set("n", "<leader>ha", function()
-	-- 	harpoon:list():add()
-	-- end)
-	-- keymap.set("n", "<leader>he", function()
-	-- 	harpoon.ui:toggle_quick_menu(harpoon:list())
-	-- end)
-
-	-- keymap.set("n", "<leader>hh", function()
-	-- 	harpoon:list():select(1)
-	-- end)
-	-- keymap.set("n", "<leader>hj", function()
-	-- 	harpoon:list():select(2)
-	-- end)
-	-- keymap.set("n", "<leader>hk", function()
-	-- 	harpoon:list():select(3)
-	-- end)
-	-- keymap.set("n", "<leader>hl", function()
-	-- 	harpoon:list():select(4)
-	-- end)
+	local wk = require("which-key")
 
 	wk.add({
 		{
