@@ -12,6 +12,8 @@ spec("verde.git.gitlinker")
 spec("verde.colorscheme.darkplus")
 spec("verde.colorscheme.catppuccin")
 spec("verde.colorscheme.github")
+spec("verde.colorscheme.rose-pine")
+spec("verde.colorscheme.doom-one")
 
 spec("verde.whichkey")
 spec("verde.devicons")
@@ -48,7 +50,7 @@ spec("verde.nvim-dap")
 
 -- Less important plugins
 spec("verde.colorizer")
-spec("verde.undotree") -- cool plugin but do I use it? or maybe I should start
+spec("verde.undotree")
 spec("verde.bqf") -- TEST if I need this
 spec("verde.nvimtree")
 spec("verde.toggleterm")
