@@ -17,7 +17,6 @@ function M.config()
 			formatting.stylua,
 			formatting.prettier,
 			formatting.black,
-			formatting.cljfmt,
 			-- No need to use custom formatting for now..
 			-- formatting.zprint.with({
 			-- 	filetypes = { "clojure", "edn" },
