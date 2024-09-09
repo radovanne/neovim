@@ -1,59 +1,59 @@
-require("verde.core")
-require("verde.options")
-require("verde.keymaps")
-require("verde.autocmds")
+require("ned.core")
+require("ned.options")
+require("ned.keymaps")
+require("ned.autocmds")
 
 -- Git specific plugins
-spec("verde.git.neogit")
-spec("verde.git.gitsigns")
-spec("verde.git.gitlinker")
+spec("ned.git.neogit")
+spec("ned.git.gitsigns")
+spec("ned.git.gitlinker")
 
 -- Colorsheme specific plugins
--- spec("verde.colorscheme.darkplus")
--- spec("verde.colorscheme.catppuccin")
--- spec("verde.colorscheme.github")
-spec("verde.colorscheme.rose-pine")
--- spec("verde.colorscheme.doom-one")
+-- spec("ned.colorscheme.darkplus")
+-- spec("ned.colorscheme.catppuccin")
+-- spec("ned.colorscheme.github")
+spec("ned.colorscheme.rose-pine")
+-- spec("ned.colorscheme.doom-one")
 
-spec("verde.whichkey")
-spec("verde.devicons")
-spec("verde.treesitter")
-spec("verde.mason")
-spec("verde.lspconfig")
-spec("verde.none-ls")
-spec("verde.cmp")
-spec("verde.lualine")
-spec("verde.harpoon")
-spec("verde.autopairs")
-spec("verde.matchup")
-spec("verde.illuminate")
-spec("verde.telescope")
--- spec("verde.alpha") -- commented out because I am not using it.
-spec("verde.sleuth")
-spec("verde.surround")
-spec("verde.comment")
-spec("verde.undotree")
+spec("ned.whichkey")
+spec("ned.devicons")
+spec("ned.treesitter")
+spec("ned.mason")
+spec("ned.lspconfig")
+spec("ned.none-ls")
+spec("ned.cmp")
+spec("ned.lualine")
+spec("ned.harpoon")
+spec("ned.autopairs")
+spec("ned.matchup")
+spec("ned.illuminate")
+spec("ned.telescope")
+-- spec("ned.alpha") -- commented out because I am not using it.
+spec("ned.sleuth")
+spec("ned.surround")
+spec("ned.comment")
+spec("ned.undotree")
 
 -- Clojure specific plugins
-spec("verde.clojure.jack-in")
-spec("verde.clojure.conjure")
-spec("verde.clojure.parpar")
+spec("ned.clojure.jack-in")
+spec("ned.clojure.conjure")
+spec("ned.clojure.parpar")
 
 -- Rust specific plugins
-spec("verde.rust.rustaceanvim")
-spec("verde.rust.crates")
+spec("ned.rust.rustaceanvim")
+spec("ned.rust.crates")
 
 -- Go specific plugins
-spec("verde.go.go")
+spec("ned.go.go")
 
 -- Debug specific plugin
-spec("verde.nvim-dap")
+spec("ned.nvim-dap")
 
 -- Less important plugins
-spec("verde.colorizer")
--- spec("verde.bqf") -- commented out, TODO check how to use this 
-spec("verde.nvimtree")
--- spec("verde.toggleterm") -- commented out because I am not using it.
-spec("verde.oil")
-spec("verde.fidget")
-require("verde.lazy")
+spec("ned.colorizer")
+-- spec("ned.bqf") -- commented out, TODO check how to use this 
+spec("ned.nvimtree")
+-- spec("ned.toggleterm") -- commented out because I am not using it.
+spec("ned.oil")
+spec("ned.fidget")
+require("ned.lazy")

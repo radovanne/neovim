@@ -52,7 +52,7 @@ function M.config()
 		{ "<leader>ss", builtin.current_buffer_fuzzy_find, desc = "Fuzzily search in current buffer" },
 	})
 
-	local icons = require("verde.icons")
+	local icons = require("ned.icons")
 	local actions = require("telescope.actions")
 
 	require("telescope").setup({

@@ -50,7 +50,7 @@ function M.config()
 		},
 		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
 		{ "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next Diagnostic" },
-		{ "<leader>lh", "<cmd>lua require('verde.lspconfig').toggle_inlay_hints()<cr>", desc = "Hints" },
+		{ "<leader>lh", "<cmd>lua require('ned.lspconfig').toggle_inlay_hints()<cr>", desc = "Hints" },
 		{ "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic" },
 		{ "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action" },
 		{ "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "Quickfix" },
@@ -58,7 +58,7 @@ function M.config()
 	})
 
 	local lspconfig = require("lspconfig")
-	local icons = require("verde.icons")
+	local icons = require("ned.icons")
 
 	local servers = {
 		"html",
@@ -118,7 +118,7 @@ function M.config()
 			capabilities = M.common_capabilities(),
 		}
 
-		local require_ok, settings = pcall(require, "verde.lspsettings." .. server)
+		local require_ok, settings = pcall(require, "ned.lspsettings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end

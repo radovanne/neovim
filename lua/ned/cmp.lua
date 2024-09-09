@@ -90,7 +90,7 @@ function M.config()
     return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
   end
 
-  local icons = require("verde.icons")
+  local icons = require("ned.icons")
   -- local lspkind = require "lspkind"
 
   cmp.setup({

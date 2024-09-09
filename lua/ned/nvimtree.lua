@@ -9,7 +9,7 @@ function M.config()
     {"<leader>pt", "<cmd>NvimTreeToggle<CR>",desc = "Project Tree" },
   }
 
-  local icons = require "verde.icons"
+  local icons = require "ned.icons"
 
   require("nvim-tree").setup {
     hijack_netrw = false,

@@ -5,7 +5,7 @@ local M = {
 }
 
 function M.config()
-  local icons = require "verde.icons"
+  local icons = require "ned.icons"
   local wk = require "which-key"
   wk.add{
     { "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" },
