@@ -17,7 +17,7 @@ function M.config()
 		".idea/*",
 		"app/Domain/Smartloader/assets/libs/*",
 		"storage/*",
-		".lsp/*",
+		".lsp/.cache/",
 		".cache/*",
 		".cpcache/*",
 		".clj-kondo/*",
