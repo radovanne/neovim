@@ -96,11 +96,13 @@ function M.config()
 
 	vim.diagnostic.config(default_diagnostic_config)
 
-	-- for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config(), "signs", "values") or {}) do
-	-- 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
-	-- end
+	for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config() or {}, "signs", "values") or {}) do
+		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
+	end
 
-	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+	-- TODO: figure out to way to rewrite lsp config so it looks more simple
+	-- vim.lsp.handlers["textDocument/hover"] =
+	-- 	vim.lsp.with(vim.lsp.handlers.hover, { source = "always", header = "", prefix = "", style = "minimal" })
 	-- vim.lsp.handlers["textDocument/signatureHelp"] =
 	-- vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 	-- require("lspconfig.ui.windows").default_options.border = "rounded"
