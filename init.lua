@@ -27,7 +27,7 @@ spec("ned.lualine")
 spec("ned.harpoon")
 spec("ned.autopairs")
 spec("ned.matchup")
-spec("ned.illuminate")
+-- spec("ned.illuminate") -- let's see how it is without this one
 spec("ned.telescope")
 -- spec("ned.alpha") -- commented out because I am not using it.
 spec("ned.sleuth")
