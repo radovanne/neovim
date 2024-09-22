@@ -13,7 +13,7 @@ function M.config()
 		"htmx",
 		-- "html",
 		"emmet_ls",
-		"tsserver",
+		"ts_ls",
 		"pyright",
 		"bashls",
 		"jsonls",

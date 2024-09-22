@@ -13,6 +13,7 @@ spec("ned.git.gitlinker")
 -- spec("ned.colorscheme.catppuccin")
 -- spec("ned.colorscheme.github")
 spec("ned.colorscheme.rose-pine")
+-- spec("ned.colorscheme.gruvbox")
 -- spec("ned.colorscheme.doom-one")
 
 spec("ned.whichkey")

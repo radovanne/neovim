@@ -57,13 +57,13 @@ function M.config()
 		"html",
 		"lua_ls",
 		"cssls",
-		"tsserver",
+		"ts_ls",
 		"emmet_ls",
 		"eslint",
 		"clojure_lsp",
 		"gopls",
 		"dockerls",
-		"tsserver",
+		"ts_ls",
 		"pyright",
 		"bashls",
 		"jsonls",
@@ -101,8 +101,8 @@ function M.config()
 	end
 
 	-- TODO: figure out to way to rewrite lsp config so it looks more simple
-	-- vim.lsp.handlers["textDocument/hover"] =
-	-- 	vim.lsp.with(vim.lsp.handlers.hover, { source = "always", header = "", prefix = "", style = "minimal" })
+	vim.lsp.handlers["textDocument/hover"] =
+		vim.lsp.with(vim.lsp.handlers.hover, { source = "always" , header = "", prefix = "", style = "minimal" })
 	-- vim.lsp.handlers["textDocument/signatureHelp"] =
 	-- vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 	-- require("lspconfig.ui.windows").default_options.border = "rounded"
