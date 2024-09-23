@@ -1,6 +1,6 @@
 local M = {
 	"nvim-telescope/telescope.nvim",
-	tag = '0.1.8',
+	tag = "0.1.8",
 	dependencies = {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
 		{ "nvim-telescope/telescope-project.nvim", lazy = true },
@@ -30,8 +30,22 @@ function M.config()
 		"public/assets/*",
 	}
 
-	require("telescope").load_extension("project")
 	local wk = require("which-key")
+
+	require("telescope").load_extension("refactoring")
+
+	wk.add({
+		{
+			"<leader>rr",
+			function()
+				require("telescope").extensions.refactoring.refactors()
+			end,
+			desc = "Find refactors",
+			mode = { "n", "v" },
+		},
+	})
+
+	require("telescope").load_extension("project")
 	local builtin = require("telescope.builtin")
 
 	wk.add({

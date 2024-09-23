@@ -1,5 +1,6 @@
 local options = {
-  backup = false, -- creates a backup file
+  guicursor = "",
+  backup = false, -- Prevent a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 1, -- more space in the neovim command line for displaying messages
   completeopt = { "menu", "menuone", "noselect" }, -- mostly just for cmp
@@ -39,8 +40,7 @@ local options = {
   sidescrolloff = 8,
   --  guifont = "monospace:h17", -- the font used in graphical neovim applications
   title = false,
-  -- colour column = "80",
-  -- colour column = "120",
+  colorcolumn = "80",
   fillchars = vim.opt.fillchars + "eob: ",
   -- spellchecker
   spelllang = "en_gb",

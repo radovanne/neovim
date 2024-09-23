@@ -59,7 +59,7 @@ function M.config()
 		"cssls",
 		"ts_ls",
 		"emmet_ls",
-		"eslint",
+		-- "eslint",
 		"clojure_lsp",
 		"gopls",
 		"dockerls",
@@ -87,7 +87,6 @@ function M.config()
 		float = {
 			focusable = true,
 			style = "minimal",
-			-- border = "rounded",
 			source = "always",
 			header = "",
 			prefix = "",
@@ -99,13 +98,6 @@ function M.config()
 	for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config() or {}, "signs", "values") or {}) do
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
 	end
-
-	-- TODO: figure out to way to rewrite lsp config so it looks more simple
-	-- vim.lsp.handlers["textDocument/hover"] =
-	-- 	vim.lsp.with(vim.lsp.handlers.hover, { source = "always" , header = "", prefix = "", style = "minimal" })
-	-- vim.lsp.handlers["textDocument/signatureHelp"] =
-	-- vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-	-- require("lspconfig.ui.windows").default_options.border = "rounded"
 
 	for _, server in pairs(servers) do
 		local opts = {
