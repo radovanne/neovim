@@ -32,6 +32,8 @@ spec("ned.lualine")
 spec("ned.harpoon")
 spec("ned.refactoring")
 
+spec("ned.tmux")
+
 spec("ned.clojure.jack-in")
 spec("ned.clojure.conjure")
 spec("ned.clojure.parpar")
