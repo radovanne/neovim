@@ -40,7 +40,7 @@ local options = {
   sidescrolloff = 8,
   --  guifont = "monospace:h17", -- the font used in graphical neovim applications
   title = false,
-  colorcolumn = "80",
+  colorcolumn = "80", -- display vertical line on 80th char
   fillchars = vim.opt.fillchars + "eob: ",
   -- spellchecker
   spelllang = "en_gb",
