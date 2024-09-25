@@ -1,7 +1,13 @@
-local M = {
-  "neogitorg/neogit",
-  event = "VeryLazy",
-  dependencies = { "sindrets/diffview.nvim" },
+local M ={
+  "NeogitOrg/neogit",
+  dependencies = {
+    "nvim-lua/plenary.nvim",         -- required
+    "sindrets/diffview.nvim",        -- optional - Diff integration
+
+    -- Only one of these is needed.
+    "nvim-telescope/telescope.nvim", -- optional
+  },
+  config = true
 }
 
 function M.config()
@@ -12,21 +18,8 @@ function M.config()
   }
 
   require("neogit").setup {
-    auto_refresh = true,
-    use_magit_keybindings = true,
-    -- Change the default way of opening neogit
-    kind = "tab",
-    -- Change the default way of opening the commit popup
-    commit_popup = {
-      kind = "split",
-    },
-    -- Change the default way of opening popups
-    popup = {
-      kind = "split",
-    },
-    -- customize displayed signs
+    disable_hint = true,
     signs = {
-      -- { CLOSED, OPENED }
       section = { icons.ui.ChevronRight, icons.ui.ChevronShortDown },
       item = { icons.ui.ChevronRight, icons.ui.ChevronShortDown },
       hunk = { "", "" },
