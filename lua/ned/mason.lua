@@ -22,7 +22,8 @@ function M.config()
 		"rust_analyzer",
 		"gopls",
 		"tailwindcss",
-		"graphql"
+		"graphql",
+		"ols"
 	}
 
 	require("mason").setup({
