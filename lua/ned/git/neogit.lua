@@ -7,7 +7,7 @@ local M ={
     -- Only one of these is needed.
     "nvim-telescope/telescope.nvim", -- optional
   },
-  config = true
+  config = true -- Does this change anything in my setup?
 }
 
 function M.config()
@@ -18,7 +18,7 @@ function M.config()
   }
 
   require("neogit").setup {
-    disable_hint = true,
+    disable_hint = true, -- Still didn't figure out what hints these are
     signs = {
       section = { icons.ui.ChevronRight, icons.ui.ChevronShortDown },
       item = { icons.ui.ChevronRight, icons.ui.ChevronShortDown },
