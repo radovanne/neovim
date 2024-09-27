@@ -29,7 +29,8 @@ function M.config()
       "xml",
       "yaml",
       "css",
-      "odin"
+      "odin",
+      "sql"
     },
     highlight = { enable = true },
     indent = { enable = true },

@@ -19,6 +19,7 @@ spec("ned.fidget")
 
 spec("ned.oil")
 spec("ned.whichkey")
+spec("ned.db")
 spec("ned.trouble")
 spec("ned.devicons")
 spec("ned.treesitter")
