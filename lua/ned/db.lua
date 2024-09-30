@@ -28,6 +28,10 @@ local M = {
 	init = function()
 		vim.g.db_ui_use_nerd_fonts = 1
 
+		--[[
+		Adds SSH host for tunneling purposes.
+		`Work in progress`	
+		--]]
 		local function add_ssh_host_to_config()
 			local ssh_config_path = vim.fn.expand("~/.ssh/config")
 
@@ -41,7 +45,6 @@ local M = {
 			local local_port_input = vim.fn.input(string.format("Local Port (default is %d): ", tonumber(db_port) + 1))
 			local local_port = (local_port_input ~= "") and local_port_input or tostring(tonumber(db_port) + 1)
 
-			-- Format the new host entry
 			local new_host_entry = string.format(
 				[[
 
@@ -60,11 +63,9 @@ Host %s
 				db_port
 			)
 
-			-- Open the file in append mode
 			local file = io.open(ssh_config_path, "a")
 
 			if file then
-				-- Write the new host configuration to the file
 				file:write(new_host_entry)
 				file:close()
 				print(string.format("Successfully added host '%s' to ~/.ssh/config", host_name))
@@ -80,7 +81,7 @@ Host %s
 		local action_state = require("telescope.actions.state")
 		local conf = require("telescope.config").values
 
-		-- Parse .ssh/config and extract host names
+		-- work in progress function
 		local function get_ssh_hosts()
 			local hosts = {}
 			for line in io.lines(os.getenv("HOME") .. "/.ssh/config") do
@@ -92,18 +93,21 @@ Host %s
 			return hosts
 		end
 
-		-- Run the SSH command using plenary.job
+		--[[
+		Opens SSH tunnel based on provided host.
+		`Work in progress`	
+		--]]
 		local function run_ssh_job(host)
 			job:new({
 				command = "ssh",
 				args = { "-N", host },
 				on_stdout = function(_, data)
-					print("stdout:", data) -- Real-time stdout logging (optional)
+					print("stdout:", data)
 				end,
 				on_stderr = function(_, data)
-					print("stderr:", data) -- Real-time stderr logging (optional)
+					print("stderr:", data)
 				end,
-				on_exit = function(j, return_val)
+				on_exit = function(return_val)
 					if return_val == 0 then
 						print("SSH connection to " .. host .. " successful!")
 					else
@@ -113,7 +117,10 @@ Host %s
 			}):start()
 		end
 
-		-- List hosts using Telescope and run SSH job via plenary.job
+		--[[
+		"Display available hosts and run SSH tunnel when host is selected"
+		`Work in progress`	
+		--]]
 		local function ssh_connect_via_job()
 			local hosts = get_ssh_hosts()
 
@@ -124,12 +131,11 @@ Host %s
 						results = hosts,
 					}),
 					sorter = conf.generic_sorter({}),
-					attach_mappings = function(prompt_bufnr, map)
+					attach_mappings = function(prompt_bufnr)
 						actions.select_default:replace(function()
 							actions.close(prompt_bufnr)
 							local selection = action_state.get_selected_entry()[1]
 
-							-- Run SSH command using plenary.job
 							run_ssh_job(selection)
 						end)
 						return true
@@ -138,6 +144,12 @@ Host %s
 				:find()
 		end
 
+		--[[
+		Prompts user for required information to make SSH tunnel and
+		connects to the RDS database vid vim dadbod aka the real father
+		figure.
+		`work in progress function`
+		--]]
 		local function ssh_tunnel_and_connect()
 			local user = vim.fn.input("SSH User: ")
 			local domain = vim.fn.input("Domain: ")
@@ -170,7 +182,7 @@ Host %s
 			end
 
 			local connection_url =
-			string.format("postgres://%s:%s@127.0.0.1:%s/%s", db_user, db_password, local_port, db_name)
+				string.format("postgres://%s:%s@127.0.0.1:%s/%s", db_user, db_password, local_port, db_name)
 			local clipboard_command = string.format("echo '%s' | xclip -selection clipboard", connection_url)
 			os.execute(clipboard_command)
 		end
