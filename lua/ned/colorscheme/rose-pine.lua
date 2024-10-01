@@ -1,8 +1,8 @@
 local M = {
   "rose-pine/neovim",
   name = "rose-pine",
-  lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  priority = 1000, -- make sure to load this before all the other start plugins
+  lazy = false,
+  priority = 1000,
 }
 
 function M.config()
@@ -18,7 +18,9 @@ function M.config()
 
   require("rose-pine").setup({
     palette = rose_pine_16_color_palette,
-  })
+    styles = {
+        transparency = false,
+  }})
   vim.cmd.colorscheme("rose-pine-moon")
 end
 
