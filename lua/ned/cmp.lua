@@ -211,11 +211,11 @@ function M.config()
 		},
 		window = {
 			completion = {
-				border = "rounded",
+				-- border = "rounded",
 				scrollbar = false,
 			},
 			documentation = {
-				border = "rounded",
+				-- border = "rounded",
 			},
 		},
 		experimental = {
