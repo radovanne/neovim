@@ -23,7 +23,8 @@ function M.config()
 		"gopls",
 		"tailwindcss",
 		"graphql",
-		"ols"
+		"ols",
+		"clangd"
 	}
 
 	require("mason").setup({

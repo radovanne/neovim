@@ -83,13 +83,21 @@ function M.config()
 		})
 	end
 
-	local wk = require("which-key")
-	wk.add({
-		{ "<localleader>c", group = "Connect/Clay" },
-		{ "<localleader>cs", clay_start, desc = "Clay start" },
-		{ "<localleader>cef", clay_eval_form, desc = "Clay eval form" },
-		{ "<localleader>cen", clay_eval_ns, desc = "Clay eval ns" },
-		{ "<localleader>ceh", clay_eval_ns_to_hiccup, desc = "Clay eval ns hiccup" },
+
+	vim.api.nvim_create_autocmd({ "FileType" }, {
+		pattern = { "clojure", "edn" },
+		callback = function()
+			local wk = require("which-key")
+
+			wk.add({
+				{ "<localleader>c", group = "Connect/Clay" },
+				{ "<localleader>cs", clay_start, desc = "Clay start" },
+				{ "<localleader>cef", clay_eval_form, desc = "Clay eval form" },
+				{ "<localleader>cen", clay_eval_ns, desc = "Clay eval ns" },
+				{ "<localleader>ceh", clay_eval_ns_to_hiccup, desc = "Clay eval ns hiccup" },
+			})
+		end,
 	})
+
 end
 return M

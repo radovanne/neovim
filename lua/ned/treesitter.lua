@@ -30,7 +30,8 @@ function M.config()
       "yaml",
       "css",
       "odin",
-      "sql"
+      "sql",
+      "c"
     },
     highlight = { enable = true },
     indent = { enable = true },

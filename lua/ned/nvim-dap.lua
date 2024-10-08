@@ -17,9 +17,15 @@ local M = {
 				dap.listeners.before.event_exited["dapui_config"] = function()
 					dapui.close()
 				end
-				vim.keymap.set("n", "<Leader>dt", ":DapToggleBreakpoint<CR>")
-				vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>")
-				vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
+
+			local wk = require("which-key")
+
+			wk.add({
+				{  "<leader>du",  ":DapUiToggle<CR>"},
+				{  "<leader>dt",  ":DapToggleBreakpoint<CR>"},
+				{  "<Leader>dx",  ":DapTerminate<CR>"},
+				{  "<Leader>do",  ":DapStepOver<CR>"},
+			})
 			end,
 		},
 		{ "theHamsta/nvim-dap-virtual-text" },

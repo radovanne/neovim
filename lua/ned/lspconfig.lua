@@ -68,7 +68,8 @@ function M.config()
 		"bashls",
 		"jsonls",
 		"yamlls",
-		"ols"
+		"ols",
+		"clangd",
 	}
 
 	local default_diagnostic_config = {
@@ -118,6 +119,10 @@ function M.config()
 
 		if server == "lua_ls" then
 			require("neodev").setup({})
+		end
+
+		if server == "clangd" then
+			require("null-ls").disable({})
 		end
 
 		lspconfig[server].setup(opts)

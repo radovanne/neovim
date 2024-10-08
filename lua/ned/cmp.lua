@@ -206,7 +206,7 @@ function M.config()
 			{ name = "emoji" },
 		},
 		confirm_opts = {
-			behavior = cmp.ConfirmBehavior.Select,
+			behavior = cmp.ConfirmBehavior.Replace,
 			select = false,
 		},
 		window = {
