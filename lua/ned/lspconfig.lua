@@ -92,6 +92,7 @@ function M.config()
 			source = "always",
 			header = "",
 			prefix = "",
+			max_width = 80
 		},
 	}
 

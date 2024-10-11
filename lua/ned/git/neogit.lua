@@ -8,7 +8,7 @@ local M = {
 		-- "nvim-telescope/telescope.nvim", -- optional
 		"ibhagwan/fzf-lua", -- optional
 	},
-	-- config = true -- Does this change anything in my setup?
+	config = true -- Does this change anything in my setup?
 }
 
 function M.config()

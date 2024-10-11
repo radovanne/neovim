@@ -22,6 +22,12 @@ keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
+-- Resize neovim panes
+keymap("n", "<M-,>", "<c-w>5<", opts)
+keymap("n", "<M-.>", "<c-w>5>", opts)
+keymap("n", "<M-t>", "<c-w>+", opts)
+keymap("n", "<M-s>", "<c-w>-", opts)
+
 -- Prevent cursor from jumping to the end of the line while appending next to previous line
 keymap("n", "J", "mzJ`z", opts)
 

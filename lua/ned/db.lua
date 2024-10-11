@@ -182,7 +182,7 @@ Host %s
 			end
 
 			local connection_url =
-				string.format("postgres://%s:%s@127.0.0.1:%s/%s", db_user, db_password, local_port, db_name)
+			string.format("postgres://%s:%s@127.0.0.1:%s/%s", db_user, db_password, local_port, db_name)
 			local clipboard_command = string.format("echo '%s' | xclip -selection clipboard", connection_url)
 			os.execute(clipboard_command)
 		end
