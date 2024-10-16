@@ -5,7 +5,6 @@ require("ned.autocmds")
 
 spec("ned.git.neogit")
 spec("ned.git.gitsigns")
-spec("ned.git.gitlinker")
 
 spec("ned.colorscheme.rose-pine")
 
@@ -31,8 +30,6 @@ spec("ned.lspconfig")
 spec("ned.lualine")
 
 spec("ned.harpoon")
-spec("ned.refactoring")
-
 spec("ned.tmux")
 
 spec("ned.clojure.jack-in")
