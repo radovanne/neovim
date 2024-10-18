@@ -32,8 +32,6 @@ function M.config()
 
 	local wk = require("which-key")
 
-	require("telescope").load_extension("refactoring")
-
 	wk.add({
 		{
 			"<leader>rr",

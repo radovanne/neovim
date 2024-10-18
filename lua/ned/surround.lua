@@ -1,8 +1,7 @@
-local M = {
-	"kylechui/nvim-surround",
-	event = { "BufReadPre", "BufNewFile" },
-	version = "*", -- Use for stability; omit to use `main` branch for the latest features
-	config = true,
-}
+local M = { 'echasnovski/mini.nvim', version = '*' }
+
+M.config = function()
+	require('mini.surround').setup()
+end
 
 return M
