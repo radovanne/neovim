@@ -16,7 +16,6 @@ spec("ned.comment")
 spec("ned.undotree")
 spec("ned.fidget")
 
-spec("ned.oil")
 spec("ned.whichkey")
 spec("ned.db")
 spec("ned.trouble")
@@ -29,7 +28,9 @@ spec("ned.telescope")
 spec("ned.lspconfig")
 spec("ned.lualine")
 
+spec("ned.oil")
 spec("ned.harpoon")
+
 spec("ned.tmux")
 
 spec("ned.clojure.jack-in")
