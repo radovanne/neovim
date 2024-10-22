@@ -63,7 +63,6 @@ function M.config()
 		"clojure_lsp",
 		"gopls",
 		"dockerls",
-		"ts_ls",
 		"pyright",
 		"bashls",
 		"jsonls",
