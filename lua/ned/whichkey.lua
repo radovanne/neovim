@@ -4,14 +4,14 @@ local M = {
 }
 
 function M.config()
+  -- TODO: Clean keymaps and add nice icons to them
   local mappings = {
     { "<leader>q", "<cmd>confirm q<CR>", desc = "Quit", mode = "n"},
     { "<leader>H", "<cmd>nohlsearch<CR>", desc = "NOHL", mode = "n" },
     { "<leader>;", "<cmd>tabnew | terminal<CR>",desc = "Term", mode = "n" },
     { "<leader>v", "<cmd>vsplit<CR>", desc =  "Split", mode = "n" },
     {"<leader>b",  desc = "Buffers" },
-    {"<leader>b",  desc = "Debug" },
-    {"<leader>d",  desc = "Find" },
+    {"<leader>d",  desc = "Debug" },
     {"<leader>f",  desc = "Find" },
     {"<leader>g",  desc = "Git" },
     {"<leader>l",  desc = "LSP" },
