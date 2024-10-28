@@ -6,7 +6,7 @@ local M = {
 }
 
 function M.config()
-  local rose_pine_16_color_palette = {
+  local rose_pine_custom = {
     moon = {
       base = "#262626", -- Lighter Dark Gray
       surface = "#333333", -- Between Base and Overlay
@@ -17,10 +17,13 @@ function M.config()
   }
 
   require("rose-pine").setup({
-    palette = rose_pine_16_color_palette,
+    -- disable_background = true,
+    palette = rose_pine_custom,
     styles = {
-        transparency = false,
-  }})
+      transparency = false,
+    }})
+  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   vim.cmd.colorscheme("rose-pine-moon")
 end
 
