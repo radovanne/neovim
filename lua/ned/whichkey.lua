@@ -19,8 +19,24 @@ function M.config()
     {"<leader>t",  desc = "Test" },
   }
 
-  local which_key = require "which-key"
-  which_key.setup {
+  local terminalMappings = {
+		{ "<leader>t", group = "Term/Test" },
+		{ "<leader>ts", function()
+			vim.cmd("belowright 12split")
+			vim.cmd("set winfixheight")
+			vim.cmd("term")
+			vim.cmd("startinsert")
+		end, desc = "Term bellow" },
+		{ "<leader>tt", function()
+			vim.cmd.tabnew()
+			vim.cmd.terminal()
+			vim.cmd.startinsert()
+			require("harpoon"):list("term"):add()
+		end, desc = "Terminal buffer" },
+	}
+
+  local wk = require "which-key"
+  wk.setup {
     plugins = {
       marks = true,
       registers = true,
@@ -52,7 +68,8 @@ function M.config()
     },
   }
 
-  which_key.add(mappings)
+  wk.add(mappings)
+  wk.add(terminalMappings)
 end
 
 return M
