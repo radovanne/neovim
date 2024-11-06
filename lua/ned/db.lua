@@ -28,6 +28,22 @@ local M = {
 	init = function()
 		vim.g.db_ui_use_nerd_fonts = 1
 
+
+		-- WORK IN PROGRESS --> we are using smm session to connect, make it secure from neovim
+		local function buildConnectionUrl()
+			-- string.format("postgres://%s:%s@127.0.0.1:%s/%s", db_user, db_password, local_port, db_name)
+		end
+
+		local function ssmSession()
+			-- aws --profile pearson ssm start-session --target i-0361f98aabbc0c581 --document-name AWS-StartPortForwardingSessionToRemoteHost --parameters '{"portNumber":["5432"],"localPortNumber":["5559"],"host":["operationaldb-cluster-prod.cluster-c5kcccmag5wp.us-east-1.rds.amazonaws.com"]}'
+		end
+
+		vim.g.dbs = {
+			{
+				name = 'pearson-operational',
+				url = buildConnectionUrl()
+			}
+		}
 		--[[
 		Prompts user for required information to make SSH tunnel and
 		connects to the RDS database with vim dadbod aka the real father
