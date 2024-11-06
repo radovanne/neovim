@@ -81,14 +81,14 @@ function M.config()
 			end,
 			desc = "Harpoon select 4",
 		},
-{
+		{
 			"<leader>h5",
 			function()
 				harpoon:list():select(5)
 			end,
 			desc = "Harpoon select 5",
 		},
-{
+		{
 			"<leader>h6",
 			function()
 				harpoon:list():select(6)
@@ -107,7 +107,6 @@ function M.config()
 			end,
 			desc = "Harpoon select 8",
 		}
-
 	})
 end
 
