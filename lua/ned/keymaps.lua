@@ -56,6 +56,9 @@ keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
 keymap({ "n", "x" }, "j", "gj", opts)
 keymap({ "n", "x" }, "k", "gk", opts)
 
+-- Easily hit escape in terminal mode.
+keymap("t", "<esc><esc>", "<c-\\><c-n>")
+
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
 
 -- [[ Highlight on yank ]]

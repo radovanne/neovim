@@ -28,14 +28,8 @@ function M.config()
       vim.cmd("belowright 12split")
       vim.cmd("set winfixheight")
       vim.cmd("term")
-      vim.cmd("startinsert")
-    end, desc = "Term bellow" },
-    { "<leader>tt", function()
-      vim.cmd.tabnew()
-      vim.cmd.terminal()
-      require("harpoon"):list("term"):add()
       vim.cmd.startinsert()
-    end, desc = "Terminal buffer" },
+    end, desc = "Term bellow" },
   }
 
   local wk = require "which-key"
