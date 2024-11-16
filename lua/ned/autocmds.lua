@@ -40,6 +40,13 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
   end,
 })
 
+-- Fixes neovim lag when CurSearch is active
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  callback = function()
+    vim.cmd "hi! link CurSearch Search"
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
   callback = function()

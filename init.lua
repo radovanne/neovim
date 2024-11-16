@@ -2,6 +2,7 @@ require("ned.core")
 require("ned.options")
 require("ned.keymaps")
 require("ned.autocmds")
+require("ned.disable")
 
 spec("ned.git.neogit")
 spec("ned.git.gitsigns")

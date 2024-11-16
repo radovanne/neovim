@@ -44,6 +44,8 @@ local options = {
   fillchars = vim.opt.fillchars + "eob: ",
   -- spellchecker
   spelllang = "en_gb",
+  more = false,
+  inccommand = "split"
 }
 
 vim.opt.shortmess:append "c"

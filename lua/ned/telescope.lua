@@ -9,6 +9,7 @@ local M = {
 
 function M.config()
 	local base_ignore_patterns = {
+		"dune.lock",
 		"nuts/*",
 		"node%_modules/*",
 		"external_data/*",

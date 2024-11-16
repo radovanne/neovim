@@ -55,20 +55,20 @@ function M.config()
 
 	local servers = {
 		"html",
-		"lua_ls",
 		"cssls",
 		"ts_ls",
 		"emmet_ls",
-		-- "eslint",
-		"clojure_lsp",
-		"gopls",
 		"dockerls",
-		"pyright",
 		"bashls",
 		"jsonls",
 		"yamlls",
-		"ols",
 		"clangd",
+		"ols",
+		"pyright",
+		"ocamllsp",
+		"clojure_lsp",
+		"gopls",
+		"lua_ls",
 	}
 
 	local default_diagnostic_config = {
