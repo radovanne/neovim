@@ -17,41 +17,7 @@ M.config = function()
     { "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk" },
   }
 
-  local icons = require("ned.icons")
   require("gitsigns").setup {
-    -- TODO: There are breaking chages with neogit and signs, investigate and fix.
-    -- signs = {
-    --   add = {
-    --     -- hl = "GitSignsAdd",
-    --     text = icons.ui.BoldLineMiddle,
-    --     -- numhl = "GitSignsAddNr",
-    --     -- linehl = "GitSignsAddLn",
-    --   },
-    --   change = {
-    --     -- hl = "GitSignsChange",
-    --     text = icons.ui.BoldLineDashedMiddle,
-    --     -- numhl = "GitSignsChangeNr",
-    --     -- linehl = "GitSignsChangeLn",
-    --   },
-    --   delete = {
-    --     -- hl = "GitSignsDelete",
-    --     text = icons.ui.TriangleShortArrowRight,
-    --     -- numhl = "GitSignsDeleteNr",
-    --     -- linehl = "GitSignsDeleteLn",
-    --   },
-    --   topdelete = {
-    --     -- hl = "GitSignsDelete",
-    --     text = icons.ui.TriangleShortArrowRight,
-    --     -- numhl = "GitSignsDeleteNr",
-    --     -- linehl = "GitSignsDeleteLn",
-    --   },
-    --   changedelete = {
-    --     -- hl = "GitSignsChange",
-    --     text = icons.ui.BoldLineMiddle,
-    --     -- numhl = "GitSignsChangeNr",
-    --     -- linehl = "GitSignsChangeLn",
-    --   },
-    -- },
     watch_gitdir = {
       interval = 1000,
       follow_files = true,
