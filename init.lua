@@ -35,6 +35,8 @@ spec("ned.harpoon")
 
 spec("ned.tmux")
 
+spec("ned.ocaml.repl")
+
 spec("ned.clojure.jack-in")
 spec("ned.clojure.conjure")
 spec("ned.clojure.parpar")
