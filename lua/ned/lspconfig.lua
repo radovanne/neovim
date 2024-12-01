@@ -69,6 +69,7 @@ function M.config()
 		"clojure_lsp",
 		"gopls",
 		"lua_ls",
+		"intelephense"
 	}
 
 	local default_diagnostic_config = {
@@ -119,6 +120,14 @@ function M.config()
 
 		if server == "lua_ls" then
 			require("neodev").setup({})
+		end
+
+		if server == "intelephense" then
+		 lspconfig[server].setup({
+				root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', "package.json"),
+				on_attach = M.on_attach,
+				capabilities = M.common_capabilities
+			})
 		end
 
 		if server == "clangd" then

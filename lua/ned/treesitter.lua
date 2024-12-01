@@ -33,6 +33,7 @@ function M.config()
       "javascript",
       "clojure",
       "rust",
+      "php"
     },
     highlight = { enable = true },
     indent = { enable = true },
