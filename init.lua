@@ -36,16 +36,16 @@ spec("ned.harpoon")
 
 spec("ned.tmux")
 
-spec("ned.ocaml.repl")
+spec("ned.langs.ocaml.repl")
 
-spec("ned.clojure.jack-in")
-spec("ned.clojure.conjure")
-spec("ned.clojure.parpar")
+spec("ned.langs.clojure.jack-in")
+spec("ned.langs.clojure.conjure")
+spec("ned.langs.clojure.parpar")
 
-spec("ned.rust.rustaceanvim")
-spec("ned.rust.crates")
+spec("ned.langs.rust.rustaceanvim")
+spec("ned.langs.rust.crates")
 
-spec("ned.go.go")
+spec("ned.langs.go.go")
 
 spec("ned.nvim-dap")
 
