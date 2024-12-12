@@ -38,7 +38,7 @@ function M.config()
 		{ "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 		{
 			"<leader>cf",
-			"<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+			"<cmd>lua vim.lsp.buf.format({async = true})<cr>",
 			desc = "Format",
 		},
 		{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
@@ -118,20 +118,12 @@ function M.config()
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end
 
-		if server == "lua_ls" then
-			require("neodev").setup({})
-		end
-
 		if server == "intelephense" then
 		 lspconfig[server].setup({
 				root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', "package.json"),
 				on_attach = M.on_attach,
 				capabilities = M.common_capabilities
 			})
-		end
-
-		if server == "clangd" then
-			require("null-ls").disable({})
 		end
 
 		lspconfig[server].setup(opts)
