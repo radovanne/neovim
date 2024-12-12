@@ -8,7 +8,6 @@ spec("ned.git.neogit")
 spec("ned.git.gitsigns")
 
 spec("ned.colorscheme.rose-pine")
-spec("ned.colorscheme.gruvbox")
 spec("ned.zen")
 
 spec("ned.autopairs")

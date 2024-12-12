@@ -42,54 +42,7 @@ local M = {
 
 function M.config()
 	require("conjure.main").main()
-
-	-- SciCloj/Clay integration with Conjure written in Lua
-	local eval = require("conjure.eval")
-	local extract = require("conjure.extract")
-
-	local function clay_start()
-		local source_path = vim.fn.expand("%:p")
-		local code = string.format(
-			'(do (require \'[scicloj.clay.v2.api :as clay]) (clay/make! {:source-path "%s"}))',
-			source_path
-		)
-
-		eval["eval-str"]({
-			origin = "custom-clay-wrapper",
-			code = code,
-		})
-	end
-
-	local function clay_eval_form()
-		local form_content = extract.form({ root = true }).content
-		local source_path = vim.fn.expand("%:p")
-		local code =
-			string.format('(scicloj.clay.v2.api/make! {:source-path "%s" :single-form %s})', source_path, form_content)
-
-		eval["eval-str"]({
-			origin = "custom-clay-wrapper",
-			code = code,
-		})
-	end
-
-	local function clay_eval_ns()
-		local source_path = vim.fn.expand("%:p")
-		local code = string.format('(scicloj.clay.v2.api/make! {:source-path "%s"})', source_path)
-		eval["eval-str"]({
-			origin = "custom-clay-wrapper",
-			code = code,
-		})
-	end
-
-	local function clay_eval_ns_to_hiccup()
-		local source_path = vim.fn.expand("%:p")
-		local code = string.format('(scicloj.clay.v2.api/make-hiccup {:source-path "%s"})', source_path)
-		eval["eval-str"]({
-			origin = "custom-clay-wrapper",
-			code = code,
-		})
-	end
-
+	local clay = require("ned.langs.clojure.clay")
 
 	vim.api.nvim_create_autocmd({ "FileType" }, {
 		pattern = { "clojure", "edn" },
@@ -98,10 +51,10 @@ function M.config()
 			require("conjure.mapping")["on-filetype"]()
 			wk.add({
 				{ "<localleader>c", group = "Connect/Clay" },
-				{ "<localleader>cs", clay_start, desc = "Clay start" },
-				{ "<localleader>cef", clay_eval_form, desc = "Clay eval form" },
-				{ "<localleader>cen", clay_eval_ns, desc = "Clay eval ns" },
-				{ "<localleader>ceh", clay_eval_ns_to_hiccup, desc = "Clay eval ns hiccup" },
+				{ "<localleader>cs", clay.start, desc = "Clay start" },
+				{ "<localleader>cef", clay.eval_form, desc = "Clay eval form" },
+				{ "<localleader>cen", clay.eval_ns, desc = "Clay eval ns" },
+				{ "<localleader>ceh", clay.eval_ns_to_hiccup, desc = "Clay eval ns hiccup" },
 			})
 		end,
 	})

@@ -15,6 +15,7 @@ local M = {
 			require("dapui").setup()
 			require("dap-go").setup()
 
+---@diagnostic disable-next-line: missing-fields
 			require("nvim-dap-virtual-text").setup {
 				-- This just tries to mitigate the chance that I leak tokens here. Probably won't stop it from happening...
 				display_callback = function(variable)
@@ -71,6 +72,7 @@ local M = {
 				{  "<leader>d<F6>", dap.terminate, desc="Terminate"},
 				{  "<leader>d<F13>", dap.restart, desc="Restart"},
 				{ "<leader>d<space>?", function()
+---@diagnostic disable-next-line: missing-fields
 					require("dapui").eval(nil, { enter = true })
 				end, desc="Eval var under cursor" }
 			})
