@@ -19,11 +19,15 @@ wk.add({
 	{ "<leader>fg", multigrep.live_multigrep, desc = "Files Grep" },
 	{ "<leader>wg", builtin.grep_string, desc = "Word Grep" },
 	{ "<leader>gf", builtin.git_files, desc = "Find git files" },
-	{ "<leader>en", function ()
-		builtin.find_files {
-			cwd = vim.fn.stdpath("config")
-		}
-	end, desc = "Edit Neovim" },
+	{
+		"<leader>en",
+		function()
+			builtin.find_files({
+				cwd = vim.fn.stdpath("config"),
+			})
+		end,
+		desc = "Edit Neovim",
+	},
 	{
 		"<leader>pp",
 		"<cmd>lua require('telescope').extensions.project.project{ display_type='full' }<cr>",
@@ -61,7 +65,7 @@ require("telescope").setup({
 		find_files = {
 			theme = "ivy",
 			file_ignore_patterns = base_ignore_patterns,
-			find_command = { "rg", "--files","--hidden", "--glob", "!**/.git/*" },
+			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
 		},
 		current_buffer_fuzzy_find = {
 			theme = "ivy",
@@ -80,18 +84,24 @@ require("telescope").setup({
 		},
 		colorscheme = {
 			enable_preview = true,
-		}
+		},
 	},
 	extensions = {
-		fzf = {},
+		fzf = {
+			-- TODO: Do I need this?
+			-- fuzzy = true, -- false will only do exact matching
+			-- override_generic_sorter = true, -- override the generic sorter
+			-- override_file_sorter = true, -- override the file sorter
+			-- case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+		},
+
 		wrap_results = true,
 		["ui-select"] = {
-			require("telescope.themes").get_dropdown {},
-		}
-
+			require("telescope.themes").get_dropdown({}),
+		},
 	},
 })
 
 pcall(require("telescope").load_extension("project"))
-pcall(require('telescope').load_extension('fzf'))
+pcall(require("telescope").load_extension("fzf"))
 pcall(require("telescope").load_extension("ui-select"))
