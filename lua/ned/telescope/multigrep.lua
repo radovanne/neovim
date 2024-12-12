@@ -1,9 +1,10 @@
+local M = {}
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local conf = require("telescope.config").values
 local make_entry = require("telescope.make_entry")
 
-local live_multigrep = function (opts)
+M.live_multigrep = function (opts)
 	opts = opts or {}
 	opts.cwd = opts.cwd or vim.uv.cwd()
 
@@ -13,7 +14,7 @@ local live_multigrep = function (opts)
 				return nil
 			end
 
-			local pieces = vim.split(prompt, "  ")
+			local pieces = vim.split(prompt, "?")
 			local args = { "rg" }
 
 			if pieces[1] then
@@ -32,6 +33,7 @@ local live_multigrep = function (opts)
 				{ "--color=never",
 					"--no-heading",
 					"--with-filename",
+					"--hidden",
 					"--line-number",
 					"--column",
 					"--smart-case"}
@@ -51,4 +53,4 @@ local live_multigrep = function (opts)
 	}):find()
 end
 
-return live_multigrep
+return M

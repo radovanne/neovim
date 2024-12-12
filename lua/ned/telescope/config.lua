@@ -9,12 +9,14 @@ local base_ignore_patterns = {
 local wk = require("which-key")
 local builtin = require("telescope.builtin")
 
+local multigrep = require("ned.telescope.multigrep")
+
 wk.add({
 	{ "<leader>bb", builtin.buffers, desc = "Active buffers" },
 	{ "<leader>fb", builtin.git_branches, desc = "Checkout branch" },
 	{ "<leader>fc", builtin.colorscheme, desc = "Colorscheme" },
 	{ "<leader>ff", builtin.find_files, desc = "Find files" },
-	{ "<leader>fg", require "ned.telescope.multigrep", desc = "Files Grep" },
+	{ "<leader>fg", multigrep.live_multigrep, desc = "Files Grep" },
 	{ "<leader>wg", builtin.grep_string, desc = "Word Grep" },
 	{ "<leader>gf", builtin.git_files, desc = "Find git files" },
 	{ "<leader>en", function ()
