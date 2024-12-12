@@ -1,6 +1,6 @@
 local M = {
 	"dundalek/parpar.nvim",
-	ft = { "clojure", "edn" },
+	ft = { "clojure", "edn", "dune"},
 	dependencies = { "gpanders/nvim-parinfer", "julienvincent/nvim-paredit" },
 	config = function()
 		local paredit = require("nvim-paredit")
