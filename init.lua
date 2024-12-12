@@ -8,6 +8,7 @@ spec("ned.git.neogit")
 spec("ned.git.gitsigns")
 
 spec("ned.colorscheme.rose-pine")
+spec("ned.colorscheme.gruvbox")
 spec("ned.zen")
 
 spec("ned.autopairs")
@@ -26,7 +27,7 @@ spec("ned.treesitter")
 spec("ned.mason")
 spec("ned.none-ls")
 spec("ned.cmp")
-spec("ned.telescope")
+spec("ned.telescope.telescope")
 spec("ned.lspconfig")
 spec("ned.lualine")
 
