@@ -33,6 +33,8 @@ function M.config()
   }
 
   local wk = require "which-key"
+	local icons = require("ned.icons")
+
   wk.setup {
     plugins = {
       marks = true,
@@ -63,6 +65,9 @@ function M.config()
       buftypes = {},
       filetypes = { "TelescopePrompt" },
     },
+    icons = {
+      separator = icons.ui.ChevronShortRight
+    }
   }
 
   wk.add(mappings)
