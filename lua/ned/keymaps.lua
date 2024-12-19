@@ -23,8 +23,8 @@ keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Resize neovim panes
-keymap("n", "<M-,>", "<c-w>5<", opts)
-keymap("n", "<M-.>", "<c-w>5>", opts)
+keymap("n", "<M-,>", "<c-w>5>", opts)
+keymap("n", "<M-.>", "<c-w>5<", opts)
 keymap("n", "<M-t>", "<c-w>+", opts)
 keymap("n", "<M-s>", "<c-w>-", opts)
 
