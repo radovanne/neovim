@@ -24,16 +24,16 @@ local M = {
 	},
 	init = function()
 		-- Set configuration options here
-		vim.g["conjure#filetype#rust"] = false
-		vim.g["conjure#filetype#python"] = false
-		vim.g["conjure#filetype#lua"] = false
+		-- vim.g["conjure#filetype#rust"] = false
+		-- vim.g["conjure#filetype#python"] = false
+		-- vim.g["conjure#filetype#lua"] = false
 		vim.g["conjure#debug"] = false
 		vim.g["conjure#highlight#enabled"] = true
 		vim.g["conjure#mapping#doc_word"] = "gk"
 		vim.g["conjure#log#treesitter"] = false
 		vim.g["conjure#client_on_load"] = false
 		vim.g["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false
-		vim.g["conjure#client#clojure#nrepl#refresh#backend"] = true
+		vim.g["conjure#client#clojure#nrepl#refresh#backend"] = "clj-reload"
 		vim.g["conjure#log#wrap"] = true
 	end,
 }
