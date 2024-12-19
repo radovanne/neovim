@@ -17,6 +17,7 @@ local M = {
         java = false, -- don't check treesitter on java
       },
       disable_filetype = { "TelescopePrompt", "spectre_panel" },
+      enable_check_bracket_line = false
     })
 
     -- import nvim-autopairs completion functionality

@@ -39,7 +39,8 @@ spec("ned.langs.ocaml.repl")
 
 spec("ned.langs.clojure.jack-in")
 spec("ned.langs.clojure.conjure")
-spec("ned.langs.clojure.parpar")
+spec("ned.langs.clojure.paredit")
+spec("ned.langs.clojure.parinfer")
 
 spec("ned.langs.rust.rustaceanvim")
 spec("ned.langs.rust.crates")
