@@ -75,11 +75,6 @@ function M.config()
 
 	require("luasnip/loaders/from_vscode").lazy_load()
 
-	-- #3F0FB7
-	-- #4B0082
-	-- #3964C3
-	-- #e71837
-
 	vim.api.nvim_set_hl(0, "CmpItemKindConjure", { fg = "#3964C3" })
 	vim.api.nvim_set_hl(0, "CmpItemKindBuffer", { fg = "#6CC644" })
 	vim.api.nvim_set_hl(0, "CmpItemKindNvimLsp", { fg = "#CA42F0" })
@@ -135,9 +130,9 @@ function M.config()
 					-- require("neotab").tabout()
 				end
 			end, {
-					"i",
-					"s",
-				}),
+				"i",
+				"s",
+			}),
 			["<S-Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_prev_item()
@@ -147,9 +142,9 @@ function M.config()
 					fallback()
 				end
 			end, {
-					"i",
-					"s",
-				}),
+				"i",
+				"s",
+			}),
 		}),
 		formatting = {
 			expandable_indicator = true,
