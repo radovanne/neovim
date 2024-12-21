@@ -25,7 +25,7 @@ spec("ned.devicons")
 spec("ned.treesitter")
 spec("ned.mason")
 spec("ned.conform")
-spec("ned.cmp")
+spec("ned.completion")
 spec("ned.telescope.telescope")
 spec("ned.lspconfig")
 spec("ned.lualine")
@@ -50,3 +50,4 @@ spec("ned.langs.go.go")
 spec("ned.nvim-dap")
 
 require("ned.lazy")
+
