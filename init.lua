@@ -50,4 +50,3 @@ spec("ned.langs.go.go")
 spec("ned.nvim-dap")
 
 require("ned.lazy")
-

@@ -5,6 +5,9 @@ keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+keymap("n", "<leader>ef", "<cmd>source %<CR>")
+keymap("n", "<leader>ee", ":.lua<CR>")
+keymap("v", "<leader>ee", ":lua<CR>")
 keymap("n", "<C-i>", "<C-i>", opts)
 
 keymap("n", "n", "nzz", opts)
