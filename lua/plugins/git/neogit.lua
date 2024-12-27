@@ -12,7 +12,7 @@ local M = {
 }
 
 function M.config()
-	local icons = require("ned.icons")
+	local icons = require("config.icons")
 	local wk = require("which-key")
 	wk.add({
 		{ "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" },

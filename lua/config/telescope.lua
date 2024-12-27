@@ -9,7 +9,7 @@ local base_ignore_patterns = {
 local wk = require("which-key")
 local builtin = require("telescope.builtin")
 
-local multigrep = require("ned.telescope.multigrep")
+local multigrep = require("custom.multigrep")
 
 wk.add({
 	{ "<leader>bb", builtin.buffers, desc = "Active buffers" },
@@ -28,11 +28,6 @@ wk.add({
 		end,
 		desc = "Edit Neovim",
 	},
-	{
-		"<leader>pp",
-		"<cmd>lua require('telescope').extensions.project.project{ display_type='full' }<cr>",
-		desc = "Projects",
-	},
 	{ "<leader>ps", builtin.live_grep, desc = "Find Text" },
 	{ "<leader>fh", builtin.help_tags, desc = "Help" },
 	{ "<leader>fl", builtin.resume, desc = "Last Search" },
@@ -40,7 +35,7 @@ wk.add({
 	{ "<leader>ss", builtin.current_buffer_fuzzy_find, desc = "Fuzzily search in current buffer" },
 })
 
-local icons = require("ned.icons")
+local icons = require("config.icons")
 local actions = require("telescope.actions")
 
 require("telescope").setup({
@@ -87,14 +82,6 @@ require("telescope").setup({
 		},
 	},
 	extensions = {
-		fzf = {
-			-- TODO: Do I need this?
-			-- fuzzy = true, -- false will only do exact matching
-			-- override_generic_sorter = true, -- override the generic sorter
-			-- override_file_sorter = true, -- override the file sorter
-			-- case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-		},
-
 		wrap_results = true,
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({}),
@@ -102,6 +89,5 @@ require("telescope").setup({
 	},
 })
 
-pcall(require("telescope").load_extension("project"))
 pcall(require("telescope").load_extension("fzf"))
 pcall(require("telescope").load_extension("ui-select"))

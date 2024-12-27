@@ -49,9 +49,9 @@ vim.g.netrw_mouse = 2
 local opt = vim.opt
 
 opt.fillchars:append {
-    stl = " ",
-  }
+  stl = " ",
+}
 
 for k, v in pairs(options) do
-	opt[k] = v
+  opt[k] = v
 end

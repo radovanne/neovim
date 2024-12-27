@@ -5,9 +5,18 @@ keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-keymap("n", "<leader>ef", "<cmd>source %<CR>")
-keymap("n", "<leader>ee", ":.lua<CR>")
-keymap("v", "<leader>ee", ":lua<CR>")
+local function ExCurrentDir()
+  local current_file_dir = vim.fn.expand('%:p:h')
+  if vim.bo.filetype == 'netrw' then
+    vim.cmd('bd!')
+  else
+    vim.cmd('Lex ' .. current_file_dir)
+  end
+end
+
+keymap("n", "<leader>ep", "<cmd>:Lex<CR>", opts)
+keymap('n', '<leader>et', ExCurrentDir, opts, "Project Tree")
+
 keymap("n", "<C-i>", "<C-i>", opts)
 
 keymap("n", "n", "nzz", opts)
