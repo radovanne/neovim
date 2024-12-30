@@ -6,17 +6,18 @@ local M = {
 			"kristijanhusak/vim-dadbod-completion",
 			ft = { "sql", "mysql", "plsql" },
 			lazy = true,
-			config = function()
-				local cmp = require("cmp")
-				local config = cmp.get_config()
-				config.sources = {
-					{ name = "vim-dadbod-completion" },
-					{ name = "luasnip" },
-					{ name = "buffer" },
-				}
-
-				cmp.setup(config)
-			end,
+		},
+		{ -- optional saghen/blink.cmp completion source
+			"saghen/blink.cmp",
+			opts = {
+				sources = {
+					-- add vim-dadbod-completion to your completion providers
+					default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+					providers = {
+						dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+					},
+				},
+			},
 		},
 	},
 	cmd = {

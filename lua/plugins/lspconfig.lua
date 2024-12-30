@@ -5,6 +5,7 @@ local M = {
 		{
 			"folke/neodev.nvim",
 		},
+		{ "saghen/blink.cmp" },
 	},
 }
 

@@ -7,7 +7,6 @@ spec("plugins.git.neogit")
 spec("plugins.git.gitsigns")
 
 -- spec("plugins.rose-pine")
--- spec("plugins.autopairs")
 spec("plugins.matchup")
 spec("plugins.sleuth")
 spec("plugins.surround")
@@ -22,15 +21,11 @@ spec("plugins.devicons")
 spec("plugins.treesitter")
 spec("plugins.mason")
 spec("plugins.conform")
-spec("plugins.completion")
+spec("plugins.blink")
 spec("plugins.telescope")
 spec("plugins.lspconfig")
 spec("plugins.lualine")
-
--- spec("plugins.oil")
 spec("plugins.harpoon")
-
--- spec("plugins.tmux")
 
 spec("plugins.langs.ocaml.repl")
 

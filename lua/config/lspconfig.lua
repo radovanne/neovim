@@ -19,8 +19,7 @@ M.on_attach = function(client, bufnr)
 end
 
 M.common_capabilities = function()
-	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities.textDocument.completion.completionItem.snippetSupport = true
+	local capabilities = require('blink.cmp').get_lsp_capabilities()
 	return capabilities
 end
 
