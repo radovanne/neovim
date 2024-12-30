@@ -7,7 +7,6 @@ spec("plugins.git.neogit")
 spec("plugins.git.gitsigns")
 
 -- spec("plugins.rose-pine")
-
 -- spec("plugins.autopairs")
 spec("plugins.matchup")
 spec("plugins.sleuth")
@@ -31,7 +30,7 @@ spec("plugins.lualine")
 -- spec("plugins.oil")
 spec("plugins.harpoon")
 
-spec("plugins.tmux")
+-- spec("plugins.tmux")
 
 spec("plugins.langs.ocaml.repl")
 
@@ -44,6 +43,8 @@ spec("plugins.langs.rust.rustaceanvim")
 spec("plugins.langs.rust.crates")
 
 spec("plugins.langs.go.go")
+
+spec("plugins.langs.lua.lazy_dev")
 
 spec("plugins.nvim-dap")
 
