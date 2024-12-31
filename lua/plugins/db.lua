@@ -12,7 +12,7 @@ local M = {
 			opts = {
 				sources = {
 					-- add vim-dadbod-completion to your completion providers
-					default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+					default = { "dadbod", "lsp", "path", "snippets", "buffer",  },
 					providers = {
 						dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 					},
