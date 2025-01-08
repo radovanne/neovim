@@ -6,7 +6,7 @@ require("config.disable")
 spec("plugins.git.neogit")
 spec("plugins.git.gitsigns")
 
--- spec("plugins.rose-pine")
+spec("plugins.rose-pine")
 spec("plugins.matchup")
 spec("plugins.sleuth")
 spec("plugins.surround")

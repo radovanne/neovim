@@ -6,7 +6,7 @@ local M = {
 }
 
 function M.config()
-  require("config.rose_pine")
+  require("config.rose-pine")
 end
 
 return M
