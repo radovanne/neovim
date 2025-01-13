@@ -1,7 +1,6 @@
 require("lualine").setup({
 	options = {
-		theme = "papercolor_dark",
-		-- theme = "auto",
+		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		ignore_focus = { "NvimTree" },
