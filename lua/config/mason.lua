@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 local servers = {
 	"lua_ls",
 	"cssls",
@@ -15,6 +16,7 @@ local servers = {
 	"graphql",
 	"ols",
 	"clangd",
+	"yamlls"
 }
 
 require("mason").setup({})

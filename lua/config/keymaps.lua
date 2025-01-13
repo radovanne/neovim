@@ -61,7 +61,7 @@ keymap({ "n", "x" }, "k", "gk", opts)
 -- Easily hit escape in terminal mode.
 keymap("t", "<esc><esc>", "<c-\\><c-n>")
 
-vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
+vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -73,3 +73,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
+
+local function switch_mode()
+	local vim = vim.o
+	if vim.background == "light" then
+		vim.background = "dark"
+	else
+		vim.background = "light"
+	end
+end
+
+keymap("n", "<leader>ms", switch_mode, opts)
