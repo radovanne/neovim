@@ -11,7 +11,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 			{ "<localleader>cef", clay.eval_form, desc = "Clay eval form" },
 			{ "<localleader>cen", clay.eval_ns, desc = "Clay eval ns" },
 			{ "<localleader>ceh", clay.eval_ns_to_hiccup, desc = "Clay eval ns hiccup" },
+			{ "<localleader>ms", "<cmd>:ConjureOutSubscribe<cr>", desc = "ConjureOutSubscribe" },
+			{ "<localleader>mo", "<cmd>:ConjureOutUnsubscribe<cr>", desc = "ConjureOutUnsubscribe" },
 		})
 	end,
 })
-

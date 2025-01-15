@@ -14,4 +14,5 @@ require("rose-pine").setup({
 		transparency = false,
 	},
 })
--- vim.cmd.colorscheme("rose-pine-moon")
+
+vim.cmd.colorscheme("rose-pine-moon")

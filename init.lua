@@ -7,7 +7,6 @@ spec("plugins.git.neogit")
 spec("plugins.git.gitsigns")
 
 spec("plugins.colorschemes.rose-pine")
-spec("plugins.colorschemes.doom")
 spec("plugins.matchup")
 spec("plugins.sleuth")
 spec("plugins.surround")
