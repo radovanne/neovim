@@ -30,6 +30,13 @@ local M = {
 				require("orgcheckbox").setup()
 			end,
 		},
+		{
+			"michaelb/sniprun",
+			run = "sh ./install.sh",
+			config = function()
+				require("sniprun").setup()
+			end,
+		},
 	},
 }
 

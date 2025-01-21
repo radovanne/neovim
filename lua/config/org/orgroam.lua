@@ -1,5 +1,5 @@
 require("org-roam").setup({
-	directory = "~/Personal/org_files",
+	directory = "~/Documents/org",
 })
 
 require("config.org.orgmode")
@@ -11,11 +11,14 @@ local blink = require("blink.cmp.config")
 
 local opts = {
 	sources = {
-		default = { "markdown", "lsp", "orgmode", "buffer", "path", "snippets" },
+		per_filetype = {
+			org = { "orgmode", "markdown", "lsp", "buffer", "path", "snippets"},
+		},
 		providers = {
 			orgmode = {
 				name = "Orgmode",
 				module = "orgmode.org.autocompletion.blink",
+				fallbacks = { "buffer" },
 			},
 			markdown = {
 				name = "RenderMarkdown",
