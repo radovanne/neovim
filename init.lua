@@ -8,7 +8,7 @@ spec("plugins.git.gitsigns")
 
 spec("plugins.colorschemes.rose-pine")
 spec("plugins.matchup")
-spec("plugins.orgroam")
+-- spec("plugins.orgroam")
 spec("plugins.sleuth")
 spec("plugins.surround")
 spec("plugins.comment")
@@ -28,17 +28,20 @@ spec("plugins.lspconfig")
 spec("plugins.lualine")
 spec("plugins.harpoon")
 
-spec("plugins.langs.ocaml.repl")
+-- Start language specific region
 
 spec("plugins.langs.clojure.jack-in")
 spec("plugins.langs.clojure.conjure")
-spec("plugins.langs.clojure.parpar")
+spec("plugins.langs.clojure.paredit")
+
+-- spec("plugins.langs.ocaml.repl")
 
 spec("plugins.langs.rust.rustaceanvim")
 spec("plugins.langs.rust.crates")
 
 spec("plugins.langs.go.go")
 
+-- End language specific region
 spec("plugins.langs.lua.lazy_dev")
 
 spec("plugins.nvim-dap")

@@ -32,7 +32,6 @@ require("nvim-treesitter.configs").setup({
 		"gosum",
 		"gotmpl",
 		"comment",
-		"org",
 	},
 	highlight = {
 		enable = true,

@@ -1,8 +1,6 @@
 local paredit = require("nvim-paredit")
-local parpar = require("parpar")
-vim.g["parinfer_mode"] = "smart"
-parpar.setup({
-  paredit = {
+
+paredit.setup({
 	keys = {
 		["<localleader>>"] = { paredit.api.slurp_forwards, "Slurp forwards" },
 		["<localleader>("] = { paredit.api.slurp_backwards, "Slurp backwards" },
@@ -36,5 +34,4 @@ parpar.setup({
 	indent = {
 		enabled = true,
 	},
-  }
 })
