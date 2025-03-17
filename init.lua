@@ -8,7 +8,6 @@ spec("plugins.git.gitsigns")
 
 spec("plugins.colorschemes.rose-pine")
 spec("plugins.matchup")
--- spec("plugins.orgroam")
 spec("plugins.sleuth")
 spec("plugins.surround")
 spec("plugins.comment")
