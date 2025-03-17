@@ -34,7 +34,7 @@ spec("plugins.langs.clojure.jack-in")
 spec("plugins.langs.clojure.conjure")
 spec("plugins.langs.clojure.paredit")
 
--- spec("plugins.langs.ocaml.repl")
+spec("plugins.langs.ocaml.repl")
 
 spec("plugins.langs.rust.rustaceanvim")
 spec("plugins.langs.rust.crates")
