@@ -30,7 +30,7 @@ vim.g.rustaceanvim = {
 	vim.cmd.RustLsp("codeAction")
       end, { buffer = bufnr, desc = "Code actions" })
 
-      vim.keymap.set("n", "<leader>K", function()
+      vim.keymap.set("n", "K", function()
 	vim.cmd.RustLsp({ "hover", "actions" })
       end, { buffer = bufnr, desc = "Code action groups" })
     end,
