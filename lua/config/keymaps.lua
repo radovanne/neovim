@@ -73,14 +73,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
-
-local function switch_mode()
-	local vim = vim.o
-	if vim.background == "light" then
-		vim.background = "dark"
-	else
-		vim.background = "light"
-	end
-end
-
-keymap("n", "<leader>ms", switch_mode, opts)

@@ -41,8 +41,10 @@ vim.opt.shortmess:append("c")
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
-vim.g.netrw_banner = 0
-vim.g.netrw_mouse = 2
+
+-- If netrw is being used
+-- vim.g.netrw_banner = 0
+-- vim.g.netrw_mouse = 2
 
 local opt = vim.opt
 

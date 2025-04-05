@@ -27,6 +27,7 @@ local M = {
 				auto_show = true,
 				auto_show_delay_ms = 250,
 			},
+			accept = { auto_brackets = { enabled = false }},
 		},
 		signature = { enabled = true },
 		-- Default list of enabled providers defined so that you can extend it

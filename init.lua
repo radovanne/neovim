@@ -10,7 +10,8 @@ spec("plugins.colorschemes.rose-pine")
 spec("plugins.matchup")
 spec("plugins.sleuth")
 spec("plugins.surround")
-spec("plugins.comment")
+spec("plugins.autopairs")
+-- spec("plugins.comment")
 spec("plugins.undotree")
 spec("plugins.fidget")
 
@@ -21,6 +22,7 @@ spec("plugins.devicons")
 spec("plugins.treesitter")
 spec("plugins.mason")
 spec("plugins.conform")
+spec("plugins.oil")
 spec("plugins.blink")
 spec("plugins.telescope")
 spec("plugins.lspconfig")
@@ -32,6 +34,7 @@ spec("plugins.harpoon")
 spec("plugins.langs.clojure.jack-in")
 spec("plugins.langs.clojure.conjure")
 spec("plugins.langs.clojure.paredit")
+spec("plugins.langs.clojure.parinfer-rust")
 
 spec("plugins.langs.ocaml.repl")
 
@@ -44,5 +47,8 @@ spec("plugins.langs.go.go")
 spec("plugins.langs.lua.lazy_dev")
 
 spec("plugins.nvim-dap")
+
+-- Dev file
+spec("plugins.dev.clay")
 
 require("config.lazy")
