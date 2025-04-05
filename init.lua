@@ -11,7 +11,6 @@ spec("plugins.matchup")
 spec("plugins.sleuth")
 spec("plugins.surround")
 spec("plugins.autopairs")
--- spec("plugins.comment")
 spec("plugins.undotree")
 spec("plugins.fidget")
 
