@@ -6,6 +6,7 @@ autopairs.setup({
 		javascript = { "template_string" },
 	},
 	enable_check_bracket_line = false,
+	enable_bracket_in_quote = false
 })
 
 autopairs.get_rules("'")[1].not_filetypes = { "clojure" }

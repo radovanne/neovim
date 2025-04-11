@@ -42,6 +42,12 @@ spec("plugins.langs.rust.crates")
 
 spec("plugins.langs.go.go")
 
+
+spec("plugins.langs.go.go")
+
+-- TODO: explore Neovim alternative
+spec("plugins.langs.ruby.rails-vim")
+
 -- End language specific region
 spec("plugins.langs.lua.lazy_dev")
 

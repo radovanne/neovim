@@ -3,6 +3,8 @@ local conform = require("conform")
 conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
+		ruby = { "rubocop", lsp_format = "fallback" },
+		eruby = { "erb_format" },
 		python = { "isort", "black" },
 		ocaml = { "ocamlformat", lsp_format = "fallback" },
 		rust = { "rustfmt", lsp_format = "fallback" },

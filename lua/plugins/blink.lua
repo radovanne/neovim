@@ -1,9 +1,20 @@
 local M = {
 	"saghen/blink.cmp",
-	dependencies = "rafamadriz/friendly-snippets",
+	-- dependencies = { "rafamadriz/friendly-snippets" },
+	dependencies = {
+		"L3MON4D3/LuaSnip",
+		version = "v2.*",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			local luasnip = require("luasnip")
+			require("luasnip.loaders.from_vscode").lazy_load()
+			luasnip.filetype_extend("ruby", { "rails" })
+		end,
+	},
 	version = "*",
 	build = "cargo build --release",
 	opts = {
+		snippets = { preset = "luasnip" },
 		-- 'default' for mappings similar to built-in completion
 		-- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
 		-- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
@@ -27,7 +38,7 @@ local M = {
 				auto_show = true,
 				auto_show_delay_ms = 250,
 			},
-			accept = { auto_brackets = { enabled = false }},
+			accept = { auto_brackets = { enabled = false } },
 		},
 		signature = { enabled = true },
 		-- Default list of enabled providers defined so that you can extend it

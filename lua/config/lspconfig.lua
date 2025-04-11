@@ -19,7 +19,7 @@ M.on_attach = function(client, bufnr)
 end
 
 M.common_capabilities = function()
-	local capabilities = require('blink.cmp').get_lsp_capabilities()
+	local capabilities = require("blink.cmp").get_lsp_capabilities()
 	return capabilities
 end
 
@@ -53,6 +53,10 @@ M.config = function()
 		"bashls",
 		"jsonls",
 		"yamlls",
+		"ruby_lsp",
+		-- "sorbet",
+		-- "solargraph",
+		-- "rubocop",
 		"clangd",
 		"ols",
 		"pyright",
@@ -112,6 +116,17 @@ M.config = function()
 		if server == "intelephense" then
 			lspconfig[server].setup({
 				root_dir = require("lspconfig.util").root_pattern("composer.json", ".git", "package.json"),
+				on_attach = M.on_attach,
+				capabilities = M.common_capabilities,
+			})
+		end
+
+		if server == "ruby_lsp" then
+			lspconfig[server].setup({
+				init_options = {
+					formatter = "standard",
+					linters = { "standard" },
+				},
 				on_attach = M.on_attach,
 				capabilities = M.common_capabilities,
 			})

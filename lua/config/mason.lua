@@ -10,13 +10,16 @@ local servers = {
 	"jsonls",
 	"clojure_lsp",
 	"intelephense",
+	-- "sorbet",
+	-- "ruby_lsp",
+	-- "solargraph",
 	"rust_analyzer",
 	"gopls",
 	"tailwindcss",
 	"graphql",
 	"ols",
 	"clangd",
-	"yamlls"
+	"yamlls",
 }
 
 require("mason").setup({})

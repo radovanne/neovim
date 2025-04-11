@@ -25,6 +25,7 @@ require("nvim-treesitter.configs").setup({
 		"typescript",
 		"javascript",
 		"clojure",
+		"ruby",
 		"rust",
 		"php",
 		"gowork",
