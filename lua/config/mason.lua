@@ -11,6 +11,7 @@ local servers = {
 	"clojure_lsp",
 	"intelephense",
 	"standardrb",
+	"erb-formatter",
 	"rust_analyzer",
 	"gopls",
 	"tailwindcss",
