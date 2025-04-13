@@ -1,6 +1,11 @@
 local conform = require("conform")
 
 conform.setup({
+	formatters = {
+		rubocop = {
+			args = { "-a", "-f", "quiet", "--stderr", "--stdin", "$FILENAME" },
+		},
+	},
 	formatters_by_ft = {
 		lua = { "stylua" },
 		ruby = { "rubocop", lsp_format = "fallback" },

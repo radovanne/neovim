@@ -53,10 +53,7 @@ M.config = function()
 		"bashls",
 		"jsonls",
 		"yamlls",
-		"ruby_lsp",
-		-- "sorbet",
-		-- "solargraph",
-		-- "rubocop",
+		"solargraph",
 		"clangd",
 		"ols",
 		"pyright",
@@ -124,11 +121,60 @@ M.config = function()
 		if server == "ruby_lsp" then
 			lspconfig[server].setup({
 				init_options = {
-					formatter = "standard",
-					linters = { "standard" },
+					enabledFeatures = {
+						codeActions = true,
+						codeLens = true,
+						completion = true,
+						definition = true,
+						diagnostics = true,
+						documentHighlights = true,
+						documentLink = true,
+						documentSymbols = true,
+						foldingRanges = true,
+						formatting = true,
+						hover = true,
+						inlayHint = true,
+						onTypeFormatting = true,
+						selectionRanges = true,
+						semanticHighlighting = true,
+						signatureHelp = true,
+						typeHierarchy = true,
+						workspaceSymbol = true,
+					},
+					featuresConfiguration = {
+						inlayHint = {
+							implicitHashValue = true,
+							implicitRescue = true,
+						},
+					},
+					formatter = "auto",
+					-- linters = { "standard", "rubocop" },
+					linters = { "rubocop" },
 				},
 				on_attach = M.on_attach,
 				capabilities = M.common_capabilities,
+			})
+		end
+
+		if server == "solargraph" then
+			lspconfig[server].setup({
+				filetypes = { "ruby", "rakefile" },
+				root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+				settings = {
+					solargraph = {
+						autoformat = true,
+						completion = true,
+						hover = true,
+						formatting = true,
+						diagnostic = true,
+						folding = true,
+						references = true,
+						rename = true,
+						symbols = true,
+					},
+					on_attach = M.on_attach,
+					capabilities = M.common_capabilities,
+				},
 			})
 		end
 

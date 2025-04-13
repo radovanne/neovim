@@ -34,14 +34,12 @@ spec("plugins.langs.clojure.jack-in")
 spec("plugins.langs.clojure.conjure")
 spec("plugins.langs.clojure.paredit")
 spec("plugins.langs.clojure.parinfer-rust")
+spec("plugins.langs.clojure.clay")
 
 spec("plugins.langs.ocaml.repl")
 
 spec("plugins.langs.rust.rustaceanvim")
 spec("plugins.langs.rust.crates")
-
-spec("plugins.langs.go.go")
-
 
 spec("plugins.langs.go.go")
 
@@ -52,8 +50,5 @@ spec("plugins.langs.ruby.rails-vim")
 spec("plugins.langs.lua.lazy_dev")
 
 spec("plugins.nvim-dap")
-
--- Dev file
-spec("plugins.dev.clay")
 
 require("config.lazy")
