@@ -2,6 +2,7 @@ local M = {
 	{
 		"radovanne/clay.nvim",
 		ft = { "clojure" },
+		branch = "add-v2-snippets",
 		config = function()
 			local clay = require("clay")
 			local wk = require("which-key")
