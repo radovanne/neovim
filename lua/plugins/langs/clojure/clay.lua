@@ -2,16 +2,17 @@ local M = {
 	{
 		"radovanne/clay.nvim",
 		ft = { "clojure" },
+		branch = "v2-snippets-integration",
 		config = function()
 			local clay = require("clay")
 			local wk = require("which-key")
 			wk.add({
 				{ "<localleader>c", group = "Connect/Clay" },
-				{ "<localleader>cs", clay.start, desc = "Clay start" },
-				{ "<localleader>cS", clay.start_and_render, desc = "Clay start" },
-				{ "<localleader>cef", clay.eval_form, desc = "Clay eval form" },
-				{ "<localleader>cen", clay.eval_ns, desc = "Clay eval ns" },
-				{ "<localleader>ceh", clay.eval_ns_to_hiccup, desc = "Clay eval ns hiccup" },
+				{ "<localleader>cs", clay.ClayStart, desc = "Clay start" },
+				{ "<localleader>cS", clay.ClayStartAndRender, desc = "Clay start" },
+				{ "<localleader>cef", clay.ClayEvalForm, desc = "Clay eval form" },
+				{ "<localleader>cen", clay.ClayEvalNamespace, desc = "Clay eval ns" },
+				{ "<localleader>ceh", clay.ClayEvalNamespaceToHiccup, desc = "Clay eval ns hiccup" },
 				{ "<localleader>ms", "<cmd>:ConjureOutSubscribe<cr>", desc = "ConjureOutSubscribe" },
 				{ "<localleader>mo", "<cmd>:ConjureOutUnsubscribe<cr>", desc = "ConjureOutUnsubscribe" },
 			})
