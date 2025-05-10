@@ -43,6 +43,8 @@ spec("plugins.langs.rust.crates")
 
 spec("plugins.langs.go.go")
 
+spec("plugins.langs.java.nvim-jdtls")
+
 -- TODO: explore Neovim alternative
 spec("plugins.langs.ruby.rails-vim")
 
