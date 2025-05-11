@@ -24,6 +24,8 @@ spec("plugins.conform")
 spec("plugins.oil")
 spec("plugins.blink")
 spec("plugins.telescope")
+
+
 spec("plugins.lspconfig")
 spec("plugins.lualine")
 spec("plugins.harpoon")
@@ -43,7 +45,8 @@ spec("plugins.langs.rust.crates")
 
 spec("plugins.langs.go.go")
 
-spec("plugins.langs.java.nvim-jdtls")
+spec("plugins.langs.java.java")
+spec("plugins.langs.java.java-deps")
 
 -- TODO: explore Neovim alternative
 spec("plugins.langs.ruby.rails-vim")
