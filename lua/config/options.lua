@@ -1,5 +1,5 @@
 local options = {
-	guicursor = "",
+	-- guicursor = "",
 	backup = false,
 	writebackup = false,
 	cmdheight = 1,

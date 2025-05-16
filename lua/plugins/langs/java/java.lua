@@ -1,10 +1,9 @@
 local M = {
-	"JavaHello/spring-boot.nvim",
+	"mfussenegger/nvim-jdtls",
 	ft = "java",
 	config = false,
 	dependencies = {
-		"mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
-		"ibhagwan/fzf-lua", -- optional
+		"mfussenegger/nvim-dap"
 	},
 }
 return M

@@ -11,7 +11,6 @@ local servers = {
 	"clojure_lsp",
 	"intelephense",
 	"standardrb",
-	-- "erb-formatter",
 	"rust_analyzer",
 	"gopls",
 	"tailwindcss",
@@ -25,4 +24,8 @@ require("mason").setup({})
 
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
+})
+
+require("mason-nvim-dap").setup({
+	ensure_installed = {"java-test","java-debug-adapter"},
 })

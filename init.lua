@@ -47,6 +47,7 @@ spec("plugins.langs.go.go")
 
 spec("plugins.langs.java.java")
 spec("plugins.langs.java.java-deps")
+spec("plugins.langs.java.spring-boot")
 
 -- TODO: explore Neovim alternative
 spec("plugins.langs.ruby.rails-vim")
