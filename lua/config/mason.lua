@@ -10,7 +10,7 @@ local servers = {
 	"jsonls",
 	"clojure_lsp",
 	"intelephense",
-	"standardrb",
+	-- "standardrb",
 	"rust_analyzer",
 	"gopls",
 	"tailwindcss",
