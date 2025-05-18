@@ -62,7 +62,7 @@ M.config = function()
 		"gopls",
 		"lua_ls",
 		"intelephense",
-		"jdtls"
+		-- "jdtls"
 	}
 
 	local default_diagnostic_config = {
@@ -119,9 +119,9 @@ M.config = function()
 			})
 		end
 
-		if server == "jdtls" then
-		require("config.jdtls").setup_jdtls()
-		end
+		-- if server == "jdtls" then
+		-- require("config.jdtls").setup_jdtls()
+		-- end
 
 		if server == "ruby_lsp" then
 			lspconfig[server].setup({
