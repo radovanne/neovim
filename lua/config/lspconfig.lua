@@ -53,16 +53,11 @@ M.config = function()
 		"bashls",
 		"jsonls",
 		"yamlls",
-		"solargraph",
-		"clangd",
-		"ols",
 		"pyright",
-		"ocamllsp",
 		"clojure_lsp",
 		"gopls",
 		"lua_ls",
 		"intelephense",
-		-- "jdtls"
 	}
 
 	local default_diagnostic_config = {
@@ -91,10 +86,10 @@ M.config = function()
 
 	vim.diagnostic.config(default_diagnostic_config)
 
-	local handlers_style_table = { style = "minimal", max_width = 80 }
+	-- local handlers_style_table = { style = "minimal", max_width = 80 }
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, handlers_style_table)
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, handlers_style_table)
+	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, handlers_style_table)
+	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, handlers_style_table)
 
 	for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config() or {}, "signs", "values") or {}) do
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
@@ -116,70 +111,6 @@ M.config = function()
 				root_dir = require("lspconfig.util").root_pattern("composer.json", ".git", "package.json"),
 				on_attach = M.on_attach,
 				capabilities = M.common_capabilities,
-			})
-		end
-
-		-- if server == "jdtls" then
-		-- require("config.jdtls").setup_jdtls()
-		-- end
-
-		if server == "ruby_lsp" then
-			lspconfig[server].setup({
-				init_options = {
-					enabledFeatures = {
-						codeActions = true,
-						codeLens = true,
-						completion = true,
-						definition = true,
-						diagnostics = true,
-						documentHighlights = true,
-						documentLink = true,
-						documentSymbols = true,
-						foldingRanges = true,
-						formatting = true,
-						hover = true,
-						inlayHint = true,
-						onTypeFormatting = true,
-						selectionRanges = true,
-						semanticHighlighting = true,
-						signatureHelp = true,
-						typeHierarchy = true,
-						workspaceSymbol = true,
-					},
-					featuresConfiguration = {
-						inlayHint = {
-							implicitHashValue = true,
-							implicitRescue = true,
-						},
-					},
-					formatter = "auto",
-					-- linters = { "standard", "rubocop" },
-					linters = { "rubocop" },
-				},
-				on_attach = M.on_attach,
-				capabilities = M.common_capabilities,
-			})
-		end
-
-		if server == "solargraph" then
-			lspconfig[server].setup({
-				filetypes = { "ruby", "rakefile" },
-				root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
-				settings = {
-					solargraph = {
-						autoformat = true,
-						completion = true,
-						hover = true,
-						formatting = true,
-						diagnostic = true,
-						folding = true,
-						references = true,
-						rename = true,
-						symbols = true,
-					},
-					on_attach = M.on_attach,
-					capabilities = M.common_capabilities,
-				},
 			})
 		end
 
