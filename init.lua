@@ -38,19 +38,10 @@ spec("plugins.langs.clojure.paredit")
 spec("plugins.langs.clojure.parinfer-rust")
 spec("plugins.langs.clojure.clay")
 
-spec("plugins.langs.ocaml.repl")
-
 spec("plugins.langs.rust.rustaceanvim")
 spec("plugins.langs.rust.crates")
 
 spec("plugins.langs.go.go")
-
--- spec("plugins.langs.java.java")
--- spec("plugins.langs.java.java-deps")
--- spec("plugins.langs.java.spring-boot")
-
--- TODO: explore Neovim alternative
-spec("plugins.langs.ruby.rails-vim")
 
 -- End language specific region
 spec("plugins.langs.lua.lazy_dev")
