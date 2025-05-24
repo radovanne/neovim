@@ -2,21 +2,18 @@
 local servers = {
 	"lua_ls",
 	"cssls",
-	"htmx",
+	-- "htmx",
 	"emmet_ls",
 	"ts_ls",
 	"pyright",
 	"bashls",
 	"jsonls",
-	"clojure_lsp",
+	-- "clojure_lsp",
 	"intelephense",
-	-- "standardrb",
 	"rust_analyzer",
 	"gopls",
 	"tailwindcss",
 	"graphql",
-	"ols",
-	"clangd",
 	"yamlls",
 }
 

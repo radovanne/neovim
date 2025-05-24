@@ -32,11 +32,11 @@ spec("plugins.harpoon")
 
 -- Start language specific region
 
+spec("plugins.langs.clojure.clay")
 spec("plugins.langs.clojure.jack-in")
 spec("plugins.langs.clojure.conjure")
 spec("plugins.langs.clojure.paredit")
 spec("plugins.langs.clojure.parinfer-rust")
-spec("plugins.langs.clojure.clay")
 
 spec("plugins.langs.rust.rustaceanvim")
 spec("plugins.langs.rust.crates")
