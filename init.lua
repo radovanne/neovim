@@ -22,9 +22,8 @@ spec("plugins.treesitter")
 spec("plugins.mason")
 spec("plugins.conform")
 spec("plugins.oil")
-spec("plugins.blink")
+spec("plugins.cmp")
 spec("plugins.telescope")
-
 
 spec("plugins.lspconfig")
 spec("plugins.lualine")
@@ -38,14 +37,9 @@ spec("plugins.langs.clojure.conjure")
 spec("plugins.langs.clojure.paredit")
 spec("plugins.langs.clojure.parinfer-rust")
 
-spec("plugins.langs.rust.rustaceanvim")
-spec("plugins.langs.rust.crates")
-
-spec("plugins.langs.go.go")
-
 -- End language specific region
 spec("plugins.langs.lua.lazy_dev")
 
-spec("plugins.nvim-dap")
+-- spec("plugins.nvim-dap")
 
 require("config.lazy")

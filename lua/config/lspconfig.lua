@@ -19,7 +19,7 @@ M.on_attach = function(client, bufnr)
 end
 
 M.common_capabilities = function()
-	local capabilities = require("blink.cmp").get_lsp_capabilities()
+	local capabilities = require('cmp_nvim_lsp').default_capabilities()
 	return capabilities
 end
 
@@ -55,9 +55,7 @@ M.config = function()
 		"yamlls",
 		"pyright",
 		"clojure_lsp",
-		"gopls",
 		"lua_ls",
-		"intelephense",
 	}
 
 	local default_diagnostic_config = {
@@ -86,11 +84,6 @@ M.config = function()
 
 	vim.diagnostic.config(default_diagnostic_config)
 
-	local handlers_style_table = { style = "minimal", max_width = 80 }
-
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, handlers_style_table)
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, handlers_style_table)
-
 	for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config() or {}, "signs", "values") or {}) do
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
 	end
@@ -104,14 +97,6 @@ M.config = function()
 		local require_ok, settings = pcall(require, "ned.lspsettings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)
-		end
-
-		if server == "intelephense" then
-			lspconfig[server].setup({
-				root_dir = require("lspconfig.util").root_pattern("composer.json", ".git", "package.json"),
-				on_attach = M.on_attach,
-				capabilities = M.common_capabilities,
-			})
 		end
 
 		lspconfig[server].setup(opts)
