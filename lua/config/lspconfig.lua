@@ -4,10 +4,6 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	keymap(bufnr, "n", "gD", "<cmd>Telescope lsp_references<CR>", opts)
 	keymap(bufnr, "n", "cx", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
@@ -41,7 +37,6 @@ M.config = function()
 		{ "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
 	})
 
-	local lspconfig = require("lspconfig")
 	local icons = require("config.icons")
 
 	local servers = {
@@ -99,7 +94,7 @@ M.config = function()
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end
 
-		lspconfig[server].setup(opts)
+		vim.lsp.config(server, opts)
 	end
 end
 

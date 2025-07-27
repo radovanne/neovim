@@ -6,7 +6,7 @@ require("config.disable")
 spec("plugins.git.neogit")
 spec("plugins.git.gitsigns")
 
-spec("plugins.colorschemes.rose-pine")
+-- spec("plugins.colorschemes.rose-pine")
 spec("plugins.matchup")
 spec("plugins.sleuth")
 spec("plugins.surround")
@@ -35,7 +35,7 @@ spec("plugins.langs.clojure.clay")
 spec("plugins.langs.clojure.jack-in")
 spec("plugins.langs.clojure.conjure")
 spec("plugins.langs.clojure.paredit")
-spec("plugins.langs.clojure.parinfer-rust")
+-- spec("plugins.langs.clojure.parinfer-rust")
 
 -- End language specific region
 spec("plugins.langs.lua.lazy_dev")
