@@ -1,9 +1,8 @@
-local M = {
-	"mbbill/undotree",
-	event = "VeryLazy",
-	config = function()
-		vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-	end,
-}
+vim.pack.add({
+  {src= "https://github.com/mbbill/undotree"},
+})
 
-return M
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+keymap("n", "<leader>u", vim.cmd.UndotreeToggle, opts)

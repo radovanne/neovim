@@ -1,6 +1,3 @@
-local M = {
-    "tpope/vim-sleuth",
-    event = "VeryLazy",
-}
-
-return M
+vim.pack.add({
+  {src= "https://github.com/tpope/vim-sleuth"},
+})

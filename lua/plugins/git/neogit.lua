@@ -1,17 +1,26 @@
-local M = {
-	"NeogitOrg/neogit",
-	dependencies = {
-		"nvim-lua/plenary.nvim", -- required
-		"sindrets/diffview.nvim", -- optional - Diff integration
+vim.pack.add({
+  {src= "https://github.com/nvim-lua/plenary.nvim"},
+  {src= "https://github.com/sindrets/diffview.nvim"},
+  {src= "https://github.com/nvim-telescope/telescope.nvim"},
+  {src= "https://github.com/NeogitOrg/neogit"},
+})
 
-		-- Only one of these is needed.
-		"nvim-telescope/telescope.nvim", -- optional
-		-- "ibhagwan/fzf-lua", -- optional
-	}
-}
+local icons = require("config.icons")
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
-function M.config()
-	require("config.neogit")
-end
+keymap("n", "<leader>gg", "<cmd>Neogit<CR>", opts)
 
-return M
+require("neogit").setup({
+	disable_hint = true,
+	signs = {
+		section = { icons.ui.ChevronRight, icons.ui.ChevronShortDown },
+		item = { icons.ui.ChevronRight, icons.ui.ChevronShortDown },
+		hunk = { "", "" },
+	},
+	integrations = {
+		telescope = true,
+		diffview = true,
+		fzf_lua = false,
+	},
+})
