@@ -1,17 +1,9 @@
 local keymap = vim.keymap.set
+keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 local opts = { noremap = true, silent = true }
 
-keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
-
-keymap('n', '<leader>q', ':quit<CR>', opts)
-keymap('n', '<leader>x', ':w<CR>:so<CR>' , opts)
-keymap('n', '<leader>cf', vim.lsp.buf.format, opts)
-keymap('n', '<leader>U', vim.pack.update, opts)
-
--- if netrw is being used
--- keymap("n", "<leader>ee", ":Ex<CR>", opts)
 
 keymap("n", "<C-i>", "<C-i>", opts)
 
@@ -56,19 +48,6 @@ keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
 
 -- Easily hit escape in terminal mode.
 keymap("t", "<esc><esc>", "<c-\\><c-n>")
-keymap("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
-
--- Term below
-keymap("n",
-	"<leader>ts",
-	function()
-		vim.cmd("belowright 12split") vim.cmd("set winfixheight")
-		vim.cmd("term")
-		vim.cmd.startinsert()
-	end, opts)
-
-keymap("n", "<Esc>", "<cmd>nohlsearch<CR>", opts)
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

@@ -4,6 +4,7 @@ require("config.autocmds")
 require("config.disable")
 
 require("plugins.fidget")
+require("plugins.whichkey")
 
 vim.pack.add({
 	{ src = 'https://github.com/nvim-tree/nvim-web-devicons' },
