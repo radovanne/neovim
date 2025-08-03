@@ -1,17 +1,118 @@
-local M = {
-	"neovim/nvim-lspconfig",
-	event = { "BufReadPre", "BufNewFile" },
-	dependencies = {
-		{
-			"folke/neodev.nvim",
+vim.pack.add({
+	{ src = 'https://github.com/neovim/nvim-lspconfig' },
+	{ src = 'https://github.com/williamboman/mason-lspconfig.nvim' },
+	{ src = 'https://github.com/williamboman/mason.nvim' },
+	{ src = 'https://github.com/saghen/blink.cmp' },
+})
+
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+  callback = function()
+    vim.cmd "checktime"
+  end,
+})
+
+local servers = {
+	"lua_ls",
+	"ts_ls",
+	"pyright",
+	"bashls",
+	"jsonls",
+	"clojure_lsp",
+	"yamlls",
+	'dockerls',
+	'docker_compose_language_service',
+}
+
+require("mason").setup({})
+
+require("mason-lspconfig").setup({
+	ensure_installed = servers,
+})
+
+vim.lsp.config['docker_ls'] = {
+	cmd = { 'docker-language-server' },
+	filetypes = { 'Dockerfile', 'dockerfile', 'compose.yaml', 'compose.yml', 'bake.json', 'bake.hcl' },
+	root_markers = { 'Dockerfile', 'dockerfile', 'compose.yaml', 'compose.yml', 'bake.json', 'bake.hcl' },
+}
+
+vim.lsp.config('lua_ls', {
+	settings = {
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+			},
+			diagnostics = {
+				globals = {
+					'vim',
+					'require'
+				},
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = {
+				enable = false,
+			},
 		},
-		{ "saghen/blink.cmp" },
+	},
+})
+
+vim.lsp.enable({
+	'clojure_lsp',
+	'lua_ls',
+	'pyright',
+	'ts_ls',
+	'docker_ls',
+	'docker_compose_language_service',
+	'yamlls',
+	"jsonls",
+	"bashls"
+})
+local capabilities = {
+	textDocument = {
+		semanticTokens = {
+			multilineTokenSupport = true,
+		}
+	},
+	workspace = {
+		didChangeWatchedFiles = {
+			dynamicRegistration = true,
+		},
 	},
 }
 
-local lsp = require("config.lspconfig")
-M.on_attach = lsp.on_attach
-M.common_capabilities = lsp.common_capabilities
-M.config = lsp.config
+capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
 
-return M
+vim.lsp.config('*', {
+	capabilities,
+	root_markers = { '.git' },
+})
+
+local icons = require("config.icons")
+
+local diagnostic_config = {
+	signs = {
+		active = true,
+		values = {
+			{ name = "DiagnosticSignError", text = icons.diagnostics.Error },
+			{ name = "DiagnosticSignWarn",  text = icons.diagnostics.Warning },
+			{ name = "DiagnosticSignHint",  text = icons.diagnostics.Hint },
+			{ name = "DiagnosticSignInfo",  text = icons.diagnostics.Information },
+		},
+	},
+	virtual_text = true,
+	update_in_insert = false,
+	underline = true,
+	severity_sort = true,
+	virtual_lines = false,
+	float = {
+		focusable = true,
+		style = "minimal",
+		source = "always",
+		header = "",
+		prefix = "",
+		max_width = 80,
+	},
+}
+
+vim.diagnostic.config(diagnostic_config)
