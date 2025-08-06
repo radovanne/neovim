@@ -22,7 +22,7 @@ build_fzf_native()
 
 local base_ignore_patterns = {
 	"dune.lock",
-	".lsp/.cache/",
+	-- ".lsp/.cache/",
 	".cache/*",
 	".cpcache/*",
 	".clj-kondo/*",
@@ -34,6 +34,7 @@ local icons = require("config.icons")
 local wk = require("which-key")
 
 wk.add({
+	{ "gd", builtin.lsp_definitions,          desc = "Go to definition" },
 	{ "<leader>b",  group = "Buffers" },
 	{ "<leader>bb", builtin.buffers,          desc = "Buffers" },
 
@@ -55,13 +56,12 @@ wk.add({
 	{ "<leader>fr", builtin.oldfiles,                                       desc = "Recent Files" },
 
 	{ "<leader>g",  group = "Git" },
-	-- { "<leader>gd", builtin.lsp_references,                                 desc = "Go to Definition" },
 	{ "<leader>gf", builtin.git_files,                                      desc = "Git Files" },
 
 	{ "<leader>s",  group = "Search" },
 	{ "<leader>sp", builtin.live_grep,                                      desc = "Live Grep" },
 	{ "<leader>ss", builtin.current_buffer_fuzzy_find,                      desc = "Current Buffer" },
-	{ "<leader>sS",  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "MF_GREP" },
+	{ "<leader>sS", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "MF_GREP" },
 
 	{ "<leader>w",  group = "Words" },
 	{ "<leader>wg", builtin.grep_string,                                    desc = "Grep String" },
