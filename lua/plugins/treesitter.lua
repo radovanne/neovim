@@ -1,12 +1,13 @@
-local M = {
-  "nvim-treesitter/nvim-treesitter",
-  -- dependencies = {"HiPhish/rainbow-delimiters.nvim"},
-  event = { "BufReadPost", "BufNewFile" },
-  build = ":TSUpdate",
-}
+vim.pack.add({{src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master"}})
 
-function M.config()
-  require("config.treesitter")
-end
+---@diagnostic disable-next-line: missing-fields
+require('nvim-treesitter.configs').setup({
+	auto_install = true,
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
+})
 
-return M
+require('nvim-treesitter.install').update({ with_sync = true })
+

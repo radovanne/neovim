@@ -1,45 +1,35 @@
-require("config.core")
 require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 require("config.disable")
-spec("plugins.git.neogit")
-spec("plugins.git.gitsigns")
 
--- spec("plugins.colorschemes.rose-pine")
-spec("plugins.matchup")
-spec("plugins.sleuth")
-spec("plugins.surround")
-spec("plugins.autopairs")
-spec("plugins.undotree")
-spec("plugins.fidget")
+require("plugins.fidget")
+require("plugins.whichkey")
 
-spec("plugins.whichkey")
-spec("plugins.db")
-spec("plugins.trouble")
-spec("plugins.devicons")
-spec("plugins.treesitter")
-spec("plugins.mason")
-spec("plugins.conform")
-spec("plugins.oil")
-spec("plugins.cmp")
-spec("plugins.telescope")
+vim.pack.add({
+	{ src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+	{ src = 'https://github.com/echasnovski/mini.surround',
+	version = 'main' },
+	{ src = "https://github.com/tpope/vim-sleuth" },
+})
+require('nvim-web-devicons').setup()
 
-spec("plugins.lspconfig")
-spec("plugins.lualine")
-spec("plugins.harpoon")
+require("plugins.colorschemes.rose-pine")
+require("plugins.neogit")
+require("plugins.oil")
+require("plugins.lualine")
+require("plugins.harpoon")
+require("plugins.autopairs")
+require("plugins.undotree")
+require("plugins.treesitter")
+require("plugins.telescope")
+require("plugins.db")
+require("plugins.blink")
+require("plugins.lspconfig")
+require("plugins.matchup")
+require("plugins.langs.clojure.conjure")
+require("plugins.langs.clojure.paredit")
+require("plugins.langs.clojure.clay")
 
--- Start language specific region
-
-spec("plugins.langs.clojure.clay")
-spec("plugins.langs.clojure.jack-in")
-spec("plugins.langs.clojure.conjure")
-spec("plugins.langs.clojure.paredit")
--- spec("plugins.langs.clojure.parinfer-rust")
-
--- End language specific region
-spec("plugins.langs.lua.lazy_dev")
-
--- spec("plugins.nvim-dap")
-
-require("config.lazy")
+require('mini.surround').setup()
+require('fidget').setup()

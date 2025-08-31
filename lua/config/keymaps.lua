@@ -1,11 +1,9 @@
 local keymap = vim.keymap.set
+keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 local opts = { noremap = true, silent = true }
 
-keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
-
-keymap("n", "<leader>ee", ":Ex<CR>", opts)
+vim.g.maplocalleader = "'"
 
 keymap("n", "<C-i>", "<C-i>", opts)
 
@@ -44,24 +42,12 @@ keymap("v", ">", ">gv", opts)
 -- Preserve copied text after pasting
 keymap("x", "p", [["_dP]])
 
--- yank to system clipboard
-keymap({ "n", "v" }, "<leader>y", [["+y]], opts)
-
--- Noooice saving
-keymap("n", "<C-s>", "<cmd>:w<CR>", opts)
-
 -- more good
 keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
 keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
 
--- tailwind bearable to work with
-keymap({ "n", "x" }, "j", "gj", opts)
-keymap({ "n", "x" }, "k", "gk", opts)
-
 -- Easily hit escape in terminal mode.
 keymap("t", "<esc><esc>", "<c-\\><c-n>")
-
-vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
