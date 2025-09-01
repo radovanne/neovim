@@ -7,6 +7,9 @@ require('nvim-treesitter.configs').setup({
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
+	ensure_installed = {
+		"comment"
+	}
 })
 
 require('nvim-treesitter.install').update({ with_sync = true })
