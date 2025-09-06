@@ -22,6 +22,7 @@ local servers = {
 	"yamlls",
 	'dockerls',
 	'docker_compose_language_service',
+	'elixirls'
 }
 
 require("mason").setup({})
@@ -68,7 +69,9 @@ vim.lsp.enable({
 	'docker_compose_language_service',
 	'yamlls',
 	"jsonls",
-	"bashls"
+	"bashls",
+	"elixirls"
+
 })
 local capabilities = {
 	textDocument = {
