@@ -9,10 +9,9 @@ if ok then
 			on_attach = function()
 				local wk = require("which-key")
 				wk.add({
-					{ "<localleader>c",  group = "Clay" },
-					{ "<localleader>fp", "<cmd>ElixirFromPipe<cr>",    desc = "Clay Start",            mode = "n" },
-					{ "<localleader>tp", "<cmd>ElixirToPipe<cr>",      desc = "Clay Start and Render", mode = "n" },
-					{ "<localleader>em", "<cmd>ElixirExpandMacro<cr>", desc = "Clay Eval Form",        mode = "v" },
+					{ "<localleader>fp", "<cmd>ElixirFromPipe<cr>",    desc = "ElixirFromPipe", mode = "n" },
+					{ "<localleader>tp", "<cmd>ElixirToPipe<cr>",      desc = "ElixirToPipe",   mode = "n" },
+					{ "<localleader>em", "<cmd>ElixirExpandMacro<cr>", desc = "ElixirExpandMacro", mode = "v" },
 				})
 			end,
 		},
