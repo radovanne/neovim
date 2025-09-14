@@ -22,8 +22,9 @@ local servers = {
 	"yamlls",
 	'dockerls',
 	'docker_compose_language_service',
-	'elixirls'
+	-- 'elixirls' -- Will be installed by elixir tools
 }
+
 
 require("mason").setup({})
 

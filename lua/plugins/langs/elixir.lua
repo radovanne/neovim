@@ -5,7 +5,7 @@ if ok then
 	elixir.setup {
 		nextls = { enable = false },
 		elixirls = {
-			-- enable = true,
+			enable = true,
 			on_attach = function()
 				local wk = require("which-key")
 				wk.add({
