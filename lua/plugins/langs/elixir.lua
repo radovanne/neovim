@@ -2,10 +2,17 @@ vim.pack.add({ { src = "https://github.com/elixir-tools/elixir-tools.nvim" } })
 
 local ok, elixir = pcall(require, "elixir")
 if ok then
+	local elixirls = require("elixir.elixirls")
 	elixir.setup {
 		nextls = { enable = false },
 		elixirls = {
 			enable = false,
+			settings = elixirls.settings { -- I Have no idea what this while thing is or does it do anything at all...
+				dialyzerEnabled = true,
+				fetchDeps = true,
+				enableTestLenses = true,
+				suggestSpecs = true,
+			},
 			-- on_attach = function()
 			-- 	local wk = require("which-key")
 			-- 	wk.add({

@@ -8,7 +8,14 @@ require('nvim-treesitter.configs').setup({
 		additional_vim_regex_highlighting = false,
 	},
 	ensure_installed = {
-		"comment"
+		"comment",
+		"eex",
+		"elixir",
+		"clojure",
+		"lua",
+		"bash",
+		"javascript",
+		"typescript"
 	}
 })
 

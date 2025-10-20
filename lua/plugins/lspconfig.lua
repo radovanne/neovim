@@ -23,7 +23,7 @@ local servers = {
 	'dockerls',
 	'docker_compose_language_service',
 	-- 'nextls'
-	-- 'elixirls' -- Will be installed by elixir tools
+	'elixirls' -- Will be installed by elixir tools
 }
 
 
