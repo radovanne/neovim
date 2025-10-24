@@ -17,6 +17,11 @@ vim.pack.add({
 require('nvim-web-devicons').setup()
 
 require("plugins.colorschemes.rose-pine")
+require("plugins.colorschemes.doom-one")
+require("plugins.colorschemes.one-dark")
+require("plugins.colorschemes.one-dark-pro")
+require("plugins.colorschemes.monokai-pro")
+
 require("plugins.neogit")
 require("plugins.oil")
 require("plugins.lualine")
