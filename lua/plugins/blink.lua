@@ -1,8 +1,10 @@
 vim.pack.add({
-  { src = 'https://github.com/saghen/blink.cmp' },
   {
-    src = "https://github.com/saghen/blink.compat"
+    src = 'https://github.com/saghen/blink.cmp',
   },
+  -- {
+  --   src = "https://github.com/saghen/blink.compat"
+  -- },
   {
     src = 'https://github.com/L3MON4D3/LuaSnip',
     version = vim.version.range("2.*")
@@ -10,13 +12,13 @@ vim.pack.add({
   { src = 'https://github.com/rafamadriz/friendly-snippets' },
 })
 
-local ok, blink_c = pcall(require, "blink.compat")
-if ok then
-  blink_c.setup({
-    impersonate_nvim_cmp = false,
-    debug = false,
-  })
-end
+-- local ok, blink_c = pcall(require, "blink.compat")
+-- if ok then
+--   blink_c.setup({
+--     impersonate_nvim_cmp = false,
+--     debug = false,
+--   })
+-- end
 
 require("luasnip.loaders.from_vscode").lazy_load()
 ---@module 'blink.cmp'
@@ -58,12 +60,12 @@ require("blink.cmp").setup({
   },
   sources = {
     default = { "lsp", "path", "snippets", "buffer" },
-    per_filetype = {
-      sql = { 'dbee', 'buffer', 'snippets' },
-    },
-    providers = {
-      dbee = { name = "cmp-dbee", module = "blink.compat.source" },
-    },
+    -- per_filetype = {
+    --   sql = { 'dbee', 'buffer', 'snippets' },
+    -- },
+    -- providers = {
+    --   dbee = { name = "cmp-dbee", module = "blink.compat.source" },
+    -- },
   },
   fuzzy = { implementation = "lua" },
   completion = {
