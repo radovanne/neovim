@@ -6,9 +6,9 @@ vim.pack.add({
 })
 
 vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
-  callback = function()
-    vim.cmd "checktime"
-  end,
+	callback = function()
+		vim.cmd "checktime"
+	end,
 })
 
 local servers = {
@@ -32,10 +32,16 @@ require("mason-lspconfig").setup({
 	ensure_installed = servers,
 })
 
-vim.lsp.config['docker_ls'] = {
+vim.lsp.config['dockerls'] = {
 	cmd = { 'docker-language-server' },
 	filetypes = { 'Dockerfile', 'dockerfile', 'compose.yaml', 'compose.yml', 'bake.json', 'bake.hcl' },
 	root_markers = { 'Dockerfile', 'dockerfile', 'compose.yaml', 'compose.yml', 'bake.json', 'bake.hcl' },
+}
+
+
+vim.lsp.config['elixirls'] = {
+	cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
+	root_markers = { 'mix.exs' },
 }
 
 vim.lsp.config('lua_ls', {
@@ -66,7 +72,7 @@ vim.lsp.enable({
 	'pyright',
 	'ts_ls',
 	"sqls",
-	'docker_ls',
+	'dockerls',
 	'docker_compose_language_service',
 	'yamlls',
 	"jsonls",
@@ -74,6 +80,7 @@ vim.lsp.enable({
 	"elixirls"
 
 })
+
 local capabilities = {
 	textDocument = {
 		semanticTokens = {

@@ -10,6 +10,7 @@ require('nvim-treesitter.configs').setup({
 	ensure_installed = {
 		"comment",
 		"eex",
+		"heex",
 		"elixir",
 		"clojure",
 		"lua",
