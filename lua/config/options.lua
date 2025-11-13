@@ -25,7 +25,7 @@ local options = {
 	swapfile = false,                           -- Don't create swap files
 	undofile = true,                            -- Persistent undo
 	undodir = vim.fn.expand("~/.vim/undodir"),  -- Undo directory
-	updatetime = 50,                           -- Faster completion
+	updatetime = 200,                           -- Faster completion
 
 	-- Split behavior
 	splitbelow = true,                          -- Horizontal splits go below
