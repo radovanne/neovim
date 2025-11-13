@@ -117,21 +117,31 @@ vim.api.nvim_create_autocmd("BufRead", {
 
 
 -- [[ Highlight symbol and references under cursor ]]
-local HIGHLIGHT_GROUP_NAME = "LspCurrentWordHighlight"
-local cur_word_hl_group = vim.api.nvim_create_augroup(HIGHLIGHT_GROUP_NAME, { clear = false })
 
-local function enable_lsp_highlight()
-  local lsp_highlight_toggle = function()
-    if next(vim.lsp.get_clients({ bufnr = 0 })) then
-      if vim.fn.eventhandler() then
-        vim.lsp.buf.document_highlight()
-      end
+local HIGHLIGHT_GROUP_NAME = "LspCurrentWordHighlight"
+
+local cur_word_hl_group = vim.api.nvim_create_augroup(HIGHLIGHT_GROUP_NAME, { clear = true })
+
+local is_highlight_active = false
+
+local function lsp_highlight_toggle_callback()
+  if next(vim.lsp.get_clients({ bufnr = 0 })) then
+    if vim.fn.eventhandler() then
+      vim.lsp.buf.document_highlight()
     end
   end
+end
+
+local function enable_lsp_highlight()
+  if is_highlight_active then
+    return
+  end
+
+  vim.api.nvim_clear_autocmds({ group = HIGHLIGHT_GROUP_NAME })
 
   vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     group = cur_word_hl_group,
-    callback = lsp_highlight_toggle,
+    callback = lsp_highlight_toggle_callback,
     desc = "Trigger LSP Document Highlight on hold",
   })
 
@@ -140,23 +150,28 @@ local function enable_lsp_highlight()
     callback = vim.lsp.buf.clear_references,
     desc = "Clear LSP Document Highlights on move",
   })
+
+  is_highlight_active = true
 end
 
 local function disable_lsp_highlight()
+  if not is_highlight_active then
+    return
+  end
+
   vim.api.nvim_clear_autocmds({ group = HIGHLIGHT_GROUP_NAME })
   vim.lsp.buf.clear_references()
+
+  is_highlight_active = false
 end
 
 local function toggle_lsp_highlight()
-  local is_active = not not vim.api.nvim_get_autocmds({
-    group = HIGHLIGHT_GROUP_NAME,
-    event = "CursorHold",
-  })
-
-  if is_active then
+  if is_highlight_active then
     disable_lsp_highlight()
+    vim.notify("LSP Highlight Disabled", vim.log.levels.INFO, { title = "LSP Toggle" })
   else
     enable_lsp_highlight()
+    vim.notify("LSP Highlight Enabled", vim.log.levels.INFO, { title = "LSP Toggle" })
   end
 end
 
