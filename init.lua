@@ -1,7 +1,6 @@
 require("config.options")
 require("config.keymaps")
 require("config.autocmds")
--- require("config.disable")
 
 require("plugins.fidget")
 require("plugins.whichkey")
@@ -17,10 +16,6 @@ vim.pack.add({
 require('nvim-web-devicons').setup()
 
 require("plugins.colorschemes.rose-pine")
-require("plugins.colorschemes.doom-one")
-require("plugins.colorschemes.one-dark")
-require("plugins.colorschemes.one-dark-pro")
-require("plugins.colorschemes.monokai-pro")
 
 require("plugins.neogit")
 require("plugins.oil")
@@ -34,11 +29,9 @@ require("plugins.blink")
 require("plugins.lspconfig")
 require("plugins.matchup")
 require("plugins.kulala")
-require("plugins.lint") -- currently only for elixir
 require("plugins.langs.clojure.conjure")
 require("plugins.langs.clojure.paredit")
 require("plugins.langs.clojure.clay")
-require("plugins.langs.elixir")
 
 require('mini.surround').setup()
 

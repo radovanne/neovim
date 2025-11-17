@@ -4,7 +4,7 @@ local mappings = {
 	{ "<leader>q",  "<cmd>confirm q<CR>",  desc = "Quit Neovim",    mode = "n" },
 	{ "<Esc>",      "<cmd>nohlsearch<CR>", desc = "NOHL",           mode = "n" },
 	{ '<leader>x',  ":w<CR>:so<CR>",       desc = "Write&Source",   mode = "n" },
-	{ '<leader>nr',  ":restart<CR>",        desc = "Restart Neovim", mode = "n" },
+	{ '<leader>nr', ":restart<CR>",        desc = "Restart Neovim", mode = "n" },
 	{ '<leader>cf', vim.lsp.buf.format,    desc = "Code Format",    mode = "n" },
 	{ '<leader>U',  vim.pack.update,       desc = "Update Plugins", mode = "n" },
 
@@ -18,14 +18,11 @@ local mappings = {
 		end,
 		desc = "Terminal below",
 	},
-	-- { "<leader>b",  desc = "Buffers" },
-	-- { "<leader>d",  desc = "Debug" },
-	-- { "<leader>f",  desc = "Find" },
-	-- { "<leader>g",  desc = "Git" },
-	-- { "<leader>l",  desc = "LSP" },
-	-- { "<leader>p",  desc = "Plugins" },
-	-- { "<leader>t",  desc = "Test/Term" },
-	-- { "<leader>e",  desc = "Explore" },
+	{ "<leader>b", desc = "Buffers" },
+	{ "<leader>f", desc = "Find" },
+	{ "<leader>g", desc = "Git" },
+	{ "<leader>l", desc = "LSP" },
+	{ "<leader>t", desc = "Terminal" },
 
 }
 
