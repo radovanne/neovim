@@ -34,7 +34,7 @@ local icons = require("config.icons")
 local wk = require("which-key")
 
 wk.add({
-	{ "gd", builtin.lsp_definitions,          desc = "Go to definition" },
+	{ "gd",         builtin.lsp_definitions,  desc = "Go to definition" },
 	{ "<leader>b",  group = "Buffers" },
 	{ "<leader>bb", builtin.buffers,          desc = "Buffers" },
 

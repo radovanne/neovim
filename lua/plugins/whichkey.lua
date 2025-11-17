@@ -18,9 +18,6 @@ local mappings = {
 		end,
 		desc = "Terminal below",
 	},
-	{ "<leader>b", desc = "Buffers" },
-	{ "<leader>f", desc = "Find" },
-	{ "<leader>g", desc = "Git" },
 	{ "<leader>l", desc = "LSP" },
 	{ "<leader>t", desc = "Terminal" },
 

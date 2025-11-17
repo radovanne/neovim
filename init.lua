@@ -19,6 +19,7 @@ require("plugins.colorschemes.rose-pine")
 
 require("plugins.neogit")
 require("plugins.oil")
+require("plugins.quicker")
 require("plugins.lualine")
 require("plugins.harpoon")
 require("plugins.undotree")
