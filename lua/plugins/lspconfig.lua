@@ -20,9 +20,10 @@ local servers = {
 	"jsonls",
 	"clojure_lsp",
 	"yamlls",
-	'dockerls',
-	'docker_compose_language_service',
-	'elixirls'
+	"dockerls",
+	"docker_compose_language_service",
+	"elixirls",
+	"clangd"
 }
 
 
@@ -77,7 +78,8 @@ vim.lsp.enable({
 	'yamlls',
 	"jsonls",
 	"bashls",
-	"elixirls"
+	"elixirls",
+	"clangd"
 
 })
 
