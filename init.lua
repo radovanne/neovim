@@ -37,5 +37,5 @@ require("plugins.langs.clojure.clay")
 require('mini.surround').setup()
 
 -- If colorscheme is disabled
--- vim.cmd(':hi statusline guibg=NONE')
 -- vim.o.termguicolors = false
+vim.cmd(':hi statusline guibg=NONE')

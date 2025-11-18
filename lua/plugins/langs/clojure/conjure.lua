@@ -15,7 +15,6 @@ local conjure = {
 	["conjure#client#clojure#nrepl#refresh#backend"] = "clj-reload",
 	["conjure#log#wrap"] = true,
 }
--- Wrap the functions in an anonymous function
 
 for key, value in pairs(conjure) do
 	vim.g[key] = value
