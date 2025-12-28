@@ -84,8 +84,8 @@ vim.lsp.enable({
 	'yamlls',
 	"jsonls",
 	"bashls",
-	"expert",
-	-- "elixirls",
+	-- "expert",
+	"elixirls",
 	"clangd"
 
 })
