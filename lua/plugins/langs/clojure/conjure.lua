@@ -14,6 +14,8 @@ local conjure = {
 	["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false,
 	["conjure#client#clojure#nrepl#refresh#backend"] = "clj-reload",
 	["conjure#log#wrap"] = true,
+	-- Elixir
+	["conjure#client#elixir#stdio#command"] = "iex -S mix"
 }
 
 for key, value in pairs(conjure) do

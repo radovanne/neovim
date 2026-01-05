@@ -1,50 +1,88 @@
 {
   "plugins": {
     "LuaSnip": {
+      "rev": "5a1e392",
       "version": "2.0.0 - 3.0.0"
     },
-    "blink.cmp": [],
-    "claudecode.nvim": {
-      "rev": "93f8e48",
-      "src": "https://github.com/coder/claudecode.nvim"
+    "blink.cmp": {
+      "rev": "6a4914c"
+    },
+    "claudecode.nvim": [],
+    "clay.nvim": [],
+    "conjure": {
+      "rev": "67705566"
     },
     "diffview.nvim": [],
-    "fidget.nvim": [],
+    "elixir-tools.nvim": {
+      "rev": "26aba63"
+    },
+    "fidget.nvim": {
+      "rev": "6446302"
+    },
     "friendly-snippets": [],
     "harpoon": {
+      "rev": "87b1a35",
       "version": "'harpoon2'"
     },
-    "kulala.nvim": [],
-    "lualine.nvim": [],
-    "mason-lspconfig.nvim": [],
-    "mason.nvim": [],
+    "kulala.nvim": {
+      "rev": "cd3eaa8"
+    },
+    "lualine.nvim": {
+      "rev": "47f91c4"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "4cfe411"
+    },
+    "mason.nvim": {
+      "rev": "57e5a8a"
+    },
     "mini.surround": {
+      "rev": "cc7b9d0",
       "version": "'main'"
     },
-    "neogit": [],
-    "neovim": [],
+    "neogit": {
+      "rev": "d8bf9102"
+    },
+    "neovim": {
+      "rev": "cf2a288"
+    },
     "nui.nvim": [],
     "nvim-dbee": [],
-    "nvim-lspconfig": [],
+    "nvim-lspconfig": {
+      "rev": "0b38bc7"
+    },
+    "nvim-paredit": [],
     "nvim-treesitter": {
       "version": "'master'"
     },
-    "nvim-web-devicons": [],
-    "oil.nvim": [],
-    "plenary.nvim": [],
-    "quicker.nvim": [],
-    "snacks.nvim": {
-      "rev": "fe7cfe9",
-      "src": "https://github.com/folke/snacks.nvim"
+    "nvim-web-devicons": {
+      "rev": "6788013"
     },
-    "telescope-fzf-native.nvim": [],
+    "oil.nvim": {
+      "rev": "81b8a91"
+    },
+    "plenary.nvim": [],
+    "quicker.nvim": {
+      "rev": "771437c"
+    },
+    "snacks.nvim": [],
+    "telescope-fzf-native.nvim": {
+      "rev": "6fea601"
+    },
     "telescope-ui-select.nvim": [],
     "telescope.nvim": {
+      "rev": "3333a52",
       "version": "1.0.0 - 2.0.0"
     },
-    "undotree": [],
-    "vim-matchup": [],
+    "undotree": {
+      "rev": "178d19e"
+    },
+    "vim-matchup": {
+      "rev": "0fb1e6b"
+    },
     "vim-sleuth": [],
-    "which-key.nvim": []
+    "which-key.nvim": {
+      "rev": "3aab214"
+    }
   }
 }
