@@ -22,7 +22,6 @@ local servers = {
 	"yamlls",
 	"dockerls",
 	"docker_compose_language_service",
-	"expert",
 	"clangd"
 }
 
@@ -37,17 +36,6 @@ vim.lsp.config['dockerls'] = {
 	cmd = { 'docker-language-server' },
 	filetypes = { 'Dockerfile', 'dockerfile', 'compose.yaml', 'compose.yml', 'bake.json', 'bake.hcl' },
 	root_markers = { 'Dockerfile', 'dockerfile', 'compose.yaml', 'compose.yml', 'bake.json', 'bake.hcl' },
-}
-
-vim.lsp.config['elixirls'] = {
-	cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
-	root_markers = { 'mix.exs' },
-}
-
-vim.lsp.config['expert'] = {
-	cmd = { 'expert', '--stdio' },
-	root_markers = { 'mix.exs', '.git' },
-	filetypes = { 'elixir', 'eelixir', 'heex' },
 }
 
 vim.lsp.config['lua_ls'] = {
@@ -83,7 +71,6 @@ vim.lsp.enable({
 	'yamlls',
 	"jsonls",
 	"bashls",
-	"expert",
 	"clangd"
 
 })
