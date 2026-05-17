@@ -1,5 +1,8 @@
 vim.pack.add({
   {
+    src = 'https://github.com/saghen/blink.lib',
+  },
+  {
     src = 'https://github.com/saghen/blink.cmp',
   },
   -- {
@@ -37,16 +40,16 @@ require("blink.cmp").setup({
   signature = { enabled = true },
   cmdline = {
     enabled = true,
-    sources = function()
-      local type = vim.fn.getcmdtype()
-      if type == "/" or type == "?" then
-        return { "buffer" }
-      end
-      if type == ":" then
-        return { "cmdline" }
-      end
-      return {}
-    end,
+    -- sources = function()
+    --   local type = vim.fn.getcmdtype()
+    --   if type == "/" or type == "?" then
+    --     return { "buffer" }
+    --   end
+    --   if type == ":" then
+    --     return { "cmdline" }
+    --   end
+    --   return {}
+    -- end,
     completion = {
       menu = {
         draw = {
