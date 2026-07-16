@@ -1,9 +1,6 @@
 vim.pack.add({
 	{ src = "https://github.com/kndndrj/nvim-dbee" },
-	-- {
-	-- 	src = "https://github.com/MattiasMTS/cmp-dbee",
-	-- 	version = "ms/v2"
-	-- },
+	{ src = "https://github.com/MattiasMTS/cmp-dbee", branch = "ms/v2" },
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
 })
 
