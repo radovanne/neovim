@@ -1,10 +1,11 @@
+require("config.remote_clipboard").setup()
 local options = {
 	-- Basic settings
 	nu = true,																	-- Line numbers
 	rnu = true,																	-- Relative line numbers
 	wrap = false,                               -- Don't wrap lines
 	scrolloff = 10,                             -- Keep 10 lines above/below cursor 
-	guicursor = "n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
+	-- guicursor = "n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
 
 	-- Indentation
 	tabstop = 4,                                -- Tab width
