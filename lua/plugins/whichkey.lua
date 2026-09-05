@@ -3,8 +3,6 @@ vim.pack.add({ { src = 'https://github.com/folke/which-key.nvim' } })
 local mappings = {
 	{ "<leader>q",  "<cmd>confirm q<CR>",  desc = "Quit Neovim",    mode = "n" },
 	{ "<Esc>",      "<cmd>nohlsearch<CR>", desc = "NOHL",           mode = "n" },
-	{ '<leader>x',  ":w<CR>:so<CR>",       desc = "Write&Source",   mode = "n" },
-	{ '<leader>nr', ":restart<CR>",        desc = "Restart Neovim", mode = "n" },
 	{ '<leader>cf', vim.lsp.buf.format,    desc = "Code Format",    mode = "n" },
 	{ '<leader>U',  vim.pack.update,       desc = "Update Plugins", mode = "n" },
 
@@ -18,9 +16,7 @@ local mappings = {
 		end,
 		desc = "Terminal below",
 	},
-	{ "<leader>l", desc = "LSP" },
 	{ "<leader>t", desc = "Terminal" },
-
 }
 
 local wk = require("which-key")

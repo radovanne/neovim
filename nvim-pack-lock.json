@@ -1,33 +1,16 @@
 {
   "plugins": {
-    "LuaSnip": {
-      "rev": "642b0c595e11608b4c18219e93b88d7637af27bc",
-      "src": "https://github.com/L3MON4D3/LuaSnip",
-      "version": "2.0.0 - 3.0.0"
-    },
     "blink.cmp": {
       "rev": "0f54bd78892f587db4dcf100a23eaddfc2a9df7d",
       "src": "https://github.com/saghen/blink.cmp"
-    },
-    "blink.compat": {
-      "rev": "1454f14a8d855a578ceeba77c62538fa1459a67c",
-      "src": "https://github.com/saghen/blink.compat"
     },
     "blink.lib": {
       "rev": "5876dd95deeb70aadbe9f1c0b7117a135061cdac",
       "src": "https://github.com/saghen/blink.lib"
     },
-    "claudecode.nvim": {
-      "rev": "2390c6e45c4789072c293ac69de051d169668b29",
-      "src": "https://github.com/coder/claudecode.nvim"
-    },
     "clay.nvim": {
       "rev": "6e901092e6305156a299a45c8679dc660ae30bbd",
       "src": "https://github.com/radovanne/clay.nvim"
-    },
-    "cmp-dbee": {
-      "rev": "1650f67b9bf43c029fc37570665ca895a33cdf5a",
-      "src": "https://github.com/MattiasMTS/cmp-dbee"
     },
     "conjure": {
       "rev": "16b436c0124dae26250986fd4e660529d6bb14f0",
@@ -40,10 +23,6 @@
     "fidget.nvim": {
       "rev": "6f793b2bcd2d35e201c09520f698bb763220908a",
       "src": "https://github.com/j-hui/fidget.nvim"
-    },
-    "friendly-snippets": {
-      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
-      "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "harpoon": {
       "rev": "87b1a3506211538f460786c23f98ec63ad9af4e5",
@@ -78,14 +57,6 @@
     "neovim": {
       "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
       "src": "https://github.com/rose-pine/neovim"
-    },
-    "nui.nvim": {
-      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
-      "src": "https://github.com/MunifTanjim/nui.nvim"
-    },
-    "nvim-dbee": {
-      "rev": "dda517694889a5d238d7aa407403984da9f80cc0",
-      "src": "https://github.com/kndndrj/nvim-dbee"
     },
     "nvim-lspconfig": {
       "rev": "b386c50cd7816f8c8a2b13b298a218af1f5a75c6",
@@ -136,6 +107,10 @@
       "rev": "427b576c16792edad01a92b89721d923c19ad60f",
       "src": "https://github.com/nvim-telescope/telescope.nvim",
       "version": "1.0.0 - 2.0.0"
+    },
+    "treesj": {
+      "rev": "79aedb401bbdc7e4202f7881eab5f6feb2105b0a",
+      "src": "https://github.com/Wansmer/treesj"
     },
     "undotree": {
       "rev": "6fa6b57cda8459e1e4b2ca34df702f55242f4e4d",

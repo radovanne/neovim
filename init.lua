@@ -24,6 +24,7 @@ require("plugins.lualine")
 require("plugins.harpoon")
 require("plugins.undotree")
 require("plugins.treesitter")
+require("plugins.treesj")
 require("plugins.telescope")
 require("plugins.blink")
 require("plugins.lspconfig")
@@ -34,7 +35,3 @@ require("plugins.langs.clojure.paredit")
 require("plugins.langs.clojure.clay")
 
 require('mini.surround').setup()
-
--- If colorscheme is disabled
--- vim.o.termguicolors = false
-vim.cmd(':hi statusline guibg=NONE')

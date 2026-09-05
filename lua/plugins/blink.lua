@@ -5,20 +5,12 @@ vim.pack.add({
   {
     src = 'https://github.com/saghen/blink.cmp',
   },
-  {
-    src = 'https://github.com/L3MON4D3/LuaSnip',
-    version = vim.version.range("2.*")
-  },
-  { src = 'https://github.com/rafamadriz/friendly-snippets' },
 })
 
-
-require("luasnip.loaders.from_vscode").lazy_load()
 ---@module 'blink.cmp'
 ---@type blink.cmp.Config
 require("blink.cmp").setup({
   keymap = {
-    preset = "default",
     ["<C-u>"] = { "scroll_documentation_up", "fallback" },
     ["<C-d>"] = { "scroll_documentation_down", "fallback" },
   },
@@ -40,13 +32,12 @@ require("blink.cmp").setup({
     },
   },
   sources = {
-    default = { "lsp", "path", "snippets", "buffer" },
+    default = { "lsp", "path", "buffer" },
   },
   fuzzy = { implementation = "lua" },
   completion = {
     accept = { auto_brackets = { enabled = false } },
     documentation = {
-      auto_show = true,
       auto_show_delay_ms = 250,
       treesitter_highlighting = true,
     }

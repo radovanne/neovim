@@ -4,24 +4,21 @@ vim.pack.add({ { src = "https://github.com/nvim-treesitter/nvim-treesitter", ver
 
 vim.g.matchup_matchparen_enabled = 1
 vim.g.matchup_matchparen_offscreen = { method = "popup" }
+
 local parsers = {
 	"comment",
-	"eex",
-	"heex",
-	"elixir",
 	"clojure",
 	"lua",
 	"bash",
 	"javascript",
-	"typescript"
+	"typescript",
+	"json",
+	"yaml",
+	"dockerfile",
+	"html",
+	"css",
+	"markdown",
+	"vim",
 }
-require('nvim-treesitter').install(parsers)
 
-vim.api.nvim_create_autocmd("FileType",
-{
-	group = vim.api.nvim_create_augroup("TreesitterSetup",
-	{ clear = true }),
-	callback = function(event)
-		pcall(vim.treesitter.start, event.buf)
-	end,
-})
+require('nvim-treesitter').install(parsers)

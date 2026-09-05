@@ -1,50 +1,41 @@
 require("config.remote_clipboard").setup()
+
 local options = {
-	-- Basic settings
-	nu = true,																	-- Line numbers
-	rnu = true,																	-- Relative line numbers
-	wrap = false,                               -- Don't wrap lines
-	scrolloff = 10,                             -- Keep 10 lines above/below cursor 
-	-- guicursor = "n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
+	-- Line numbers
+	nu = true,
+	rnu = true,
+	wrap = false,
+	scrolloff = 10,
 
-	-- Indentation
-	tabstop = 4,                                -- Tab width
-	shiftwidth = 4,                             -- Indent width
-	softtabstop = 4,                            -- Soft tab stop
-	expandtab = true,                           -- Use spaces instead of tabs
-	smartindent = true,                         -- Smart auto-indenting
+	-- Indentation baseline (vim-sleuth overrides per project when it detects)
+	tabstop = 4,
+	shiftwidth = 4,
+	softtabstop = 4,
+	expandtab = true,
 
-	-- Visual settings
-	termguicolors = true,                       -- Enable 24-bit colors
-	signcolumn = "yes",                         -- Always show sign column
-	completeopt ={ "menu", "menuone", "noselect", "popup", "fuzzy" },  -- Completion options 
-	synmaxcol = 300,                            -- Syntax highlighting limit 
+	-- Visual
+	termguicolors = true,
+	signcolumn = "yes",
+	completeopt = { "menu", "menuone", "noselect", "popup", "fuzzy" },
+	synmaxcol = 300,
 	title = true,
 
 	-- File handling
-	writebackup = false,                        -- Don't create backup before writing
-	swapfile = false,                           -- Don't create swap files
-	undofile = true,                            -- Persistent undo
-	undodir = vim.fn.expand("~/.vim/undodir"),  -- Undo directory
-	updatetime = 200,                           -- Faster completion
+	swapfile = false,
+	undofile = true,
+	updatetime = 200,
 
 	-- Split behavior
-	splitbelow = true,                          -- Horizontal splits go below
-	splitright = true,                          -- Vertical splits go right
+	splitbelow = true,
+	splitright = true,
 }
 
-vim.opt.path:append("**")                          -- include subdirectories in search
+vim.opt.path:append("**")
+vim.opt.isfname:append("@-@")
 
--- If netrw is being used
--- vim.g.netrw_banner = 0
--- vim.g.netrw_mouse = 2
--- vim.g.netrw_browse_split = 0
--- vim.g.netrw_winsize = 25
-
-local opt = vim.opt
-
-opt.isfname:append("@-@")
+-- Don't auto-continue comments (Enter under "//" won't add another "//")
+vim.opt.formatoptions:remove({ "c", "r", "o" })
 
 for k, v in pairs(options) do
-	opt[k] = v
+	vim.opt[k] = v
 end

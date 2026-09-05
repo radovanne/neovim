@@ -5,24 +5,14 @@ vim.pack.add({
 	{ src = 'https://github.com/saghen/blink.cmp' },
 })
 
-vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
-	callback = function()
-		vim.cmd "checktime"
-	end,
-})
-
 local servers = {
 	"lua_ls",
 	"ts_ls",
-	"pyright",
-	"sqls",
 	"bashls",
 	"jsonls",
 	"clojure_lsp",
 	"yamlls",
 	"dockerls",
-	"docker_compose_language_service",
-	"clangd"
 }
 
 
@@ -63,16 +53,11 @@ vim.lsp.config['lua_ls'] = {
 vim.lsp.enable({
 	'clojure_lsp',
 	'lua_ls',
-	'pyright',
 	'ts_ls',
-	"sqls",
 	'dockerls',
-	'docker_compose_language_service',
 	'yamlls',
 	"jsonls",
 	"bashls",
-	"clangd"
-
 })
 
 local capabilities = {
